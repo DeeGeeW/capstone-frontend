@@ -22,10 +22,10 @@
             <a class="nav-link" href="/signup">Sign Up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log In</a>
+            <a class="nav-link" href="/login">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Log Out</a>
+            <a class="nav-link" href="/logout">Log Out</a>
           </li>
         </ul>
       </div>
