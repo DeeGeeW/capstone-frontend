@@ -4,6 +4,7 @@ import AboutView from "../views/AboutView.vue";
 import SignupView from "../views/SignupView.vue";
 import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
+import BirdView from "../views/BirdView.vue";
 // import BirdIndex from "../views/BirdIndex.vue";
 
 const routes = [
@@ -23,6 +24,11 @@ const routes = [
   { path: "/signup", name: "signup", component: SignupView },
   { path: "/login", name: "login", component: LoginView },
   { path: "/logout", name: "logout", component: LogoutView },
+  {
+    path: "/birds/:id",
+    name: "birds-view",
+    component: BirdView,
+  },
   // {
   //   path: "/signup",
   //   name: "signup",

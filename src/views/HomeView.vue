@@ -7,6 +7,7 @@ export default {
       message: "Ready for an ADVENTURE?!",
       birds: [],
       locations: [],
+      currentbird: {},
     };
   },
   created: function () {
@@ -26,15 +27,29 @@ export default {
         this.locations = response.data;
       });
     },
+    showBird(bird) {
+      axios.get(`/birds/${bird.id}`).then((response) => {
+        this.currentbird = response.data;
+        document.querySelector("#bird-details").showModal();
+      });
+    },
   },
 };
 </script>
 
 <template>
-  <div class="home">
+  <div class="home row">
     <h1>{{ message }}</h1>
     <div v-for="bird in birds" v-bind:key="bird.id">
-      <h3>{{ bird.c_name }}</h3>
+      <div class="card" style="width: 18rem">
+        <img v-bind:src="bird.image_url" class="card-img-top" v-bind:alt="bird.c_name" />
+        <div class="card-body">
+          <!-- <h5 class="card-title">{{ bird.name }}</h5> -->
+          <p class="card-text">Name: {{ bird.c_name }}</p>
+          <a v-bind:href="`/birds/${bird.id}`" class="btn btn-primary">More Info</a>
+        </div>
+        <!-- <button v-on:click="showBird(bird)">More test Info</button> -->
+      </div>
     </div>
     <div v-for="location in locations" v-bind:key="location.state">
       <h2>{{ location.state }}</h2>
@@ -42,4 +57,9 @@ export default {
   </div>
 </template>
 
-<style></style>
+<style>
+img {
+  height: 200px;
+  object-fit: cover;
+}
+</style>
