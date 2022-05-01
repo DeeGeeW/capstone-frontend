@@ -6,7 +6,7 @@
     <p>s_name: {{ bird.s_name }}</p>
     <p>description: {{ bird.description }}</p>
     <router-link to="/" style="margin-right: 10px">Back to all birds</router-link>
-    <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link>
+    <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
     <!-- <button v-on:click="destroybird()">Delete</button> -->
   </div>
 </template>
