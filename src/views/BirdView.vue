@@ -11,11 +11,11 @@
       <p v-for="bird.comment in comments", v-text"comment"></p>
     </div> -->
     <router-link to="/" style="margin-right: 10px">Back to all birds</router-link>
-    <div class="comment-box" v-for="comment in comments" v-bind:key="comment.comment_id">
+    <div class="comment-box" v-for="comment in comments" v-bind:key="comment.id">
       <p>{{ bird.comment.comment_text }}</p>
       <p>{{ bird.c_name }}</p>
       <p>{{ bird.comments[0].comment_text }}</p>
-      <p>{{ comments[0].lat }}</p>
+      <p>{{ comment.lat }}</p>
       <p>{{ comments.long }}</p>
     </div>
     <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
