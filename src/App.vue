@@ -68,7 +68,7 @@ export default {
 
 nav {
   padding: 30px;
-  font-family: Tapestry, cursive;
+  font-family: Rubik Bubbles;
 }
 
 nav a {

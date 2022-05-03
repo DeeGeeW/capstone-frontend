@@ -12,11 +12,10 @@
     </div> -->
     <router-link to="/" style="margin-right: 10px">Back to all birds</router-link>
     <div class="comment-box" v-for="comment in bird.comments" v-bind:key="comment.id">
+      <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
       <p>{{ comment.comment_text }}</p>
-      <p>{{ bird.c_name }}</p>
-      <p>User ID:{{ comment.user_id }}</p>
-      <p>{{ comment.lat }}</p>
-      <p>{{ comment.long }}</p>
+      <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
+      <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
     </div>
     <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
     <!-- <button v-on:click="destroybird()">Delete</button> -->
@@ -62,6 +61,9 @@ export default {
 /* div {
   background-image: url(bird.background_url);
 } */
+.bird-page {
+  font-family: Rubik Bubbles;
+}
 div .comment-box {
   border-style: inset;
   color: Black;

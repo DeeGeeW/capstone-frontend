@@ -39,7 +39,7 @@ export default {
 
 <template>
   <div class="home row">
-    <h1>Choose Bird. Find Bird. Share Bird.</h1>
+    <h1>Choose Burd. Find Burd. Share Burd.</h1>
     <div
       class="col"
       v-bind:class="{ selected: bird === currentbird }"
@@ -70,7 +70,7 @@ export default {
   background-color: gold;
 }
 .card-body {
-  background-color: gainsboro;
+  background-color: rgb(54, 53, 53);
 }
 img {
   height: 200px;
@@ -79,5 +79,6 @@ img {
 .home {
   background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
   background-size: cover;
+  font-family: "Tapestry", cursive;
 }
 </style>
