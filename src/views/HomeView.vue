@@ -4,7 +4,7 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      message: "Ready for an ADVENTURE?!",
+      message: "Choose Bird.",
       birds: [],
       locations: [],
       currentbird: {},
@@ -39,7 +39,7 @@ export default {
 
 <template>
   <div class="home row">
-    <h1>{{ message }}</h1>
+    <h1>Choose Bird. Find Bird. Share Bird.</h1>
     <div
       class="col"
       v-bind:class="{ selected: bird === currentbird }"
@@ -66,8 +66,8 @@ export default {
 <style>
 /* div {text} */
 .selected .card-body {
-  color: orangered;
-  background-color: aqua;
+  color: black;
+  background-color: gold;
 }
 .card-body {
   background-color: gainsboro;
@@ -76,7 +76,8 @@ img {
   height: 200px;
   object-fit: cover;
 }
-div {
-  background-color: pink;
+.home {
+  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
+  background-size: cover;
 }
 </style>

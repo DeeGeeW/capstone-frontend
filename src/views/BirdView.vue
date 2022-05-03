@@ -1,11 +1,11 @@
 <template>
-  <div class="home" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }">
-    <div class="test" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }" v-bind:key="bird.id"></div>
-    <h1>{{ bird.c_name }}</h1>
+  <div class="bird-page" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }">
+    <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }" v-bind:key="bird.id"></div> -->
+    <h1 class="info-border">{{ bird.c_name }}</h1>
     <!-- <p>c_name: {{ bird.c_name }}</p> -->
     <img v-bind:src="bird.image_url" v-bind:alt="bird.c_name" style="max-width: 250px" />
-    <p>s_name: {{ bird.s_name }}</p>
-    <p>description: {{ bird.description }}</p>
+    <p class="info-border">Scientific Name: {{ bird.s_name }}</p>
+    <p class="info-border">Description: {{ bird.description }}</p>
     <!-- <p>{{ bird.comments[0].comment_text }}</p> -->
     <!-- <div class="container">
       <p v-for="bird.comment in comments", v-text"comment"></p>
@@ -40,12 +40,6 @@ export default {
       console.log(this.bird);
     });
   },
-  // function(index(num)) {
-  //   while (num < bird.comments.length()) {
-  //   return num;
-  //   num++;
-  //   }
-  // }
   // console.log(index(0));
   // function (comments_i) {
   //   while (comments_i < bird.comments.length){
@@ -70,9 +64,16 @@ export default {
 } */
 div .comment-box {
   border-style: inset;
-  color: blue;
+  color: Black;
+  background-color: gold;
 }
 .test {
   height: 100px;
+}
+
+.info-border {
+  border-style: inset;
+  color: aquamarine;
+  background-color: blueviolet;
 }
 </style>
