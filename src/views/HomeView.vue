@@ -8,6 +8,7 @@ export default {
       birds: [],
       locations: [],
       currentbird: {},
+      searchText: "",
     };
   },
   created: function () {
@@ -19,6 +20,13 @@ export default {
       axios.get("/birds").then((response) => {
         console.log(response.data);
         this.birds = response.data;
+      });
+    },
+    filterBirds() {
+      return this.birds.filter((bird) => {
+        var lowercaseTitle = bird.c_name.toLowerCase();
+        var lowercaseSearchText = this.searchText.toLowerCase();
+        return lowercaseTitle.includes(lowercaseSearchText);
       });
     },
     indexLocations: function () {
@@ -39,11 +47,21 @@ export default {
 
 <template>
   <div class="home row">
-    <h1>Choose Burd. Find Burd. Share Burd.</h1>
+    <h1>Choose Bird. Find Bird. Share Bird.</h1>
+    <div class="d-flex">
+      <input
+        class="form-control me-2"
+        type="search"
+        placeholder="Search by Bird Common Name"
+        aria-label="Search by Bird Common Name"
+        v-model="searchText"
+      />
+      <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchBirds()">Search</button> -->
+    </div>
     <div
       class="col"
       v-bind:class="{ selected: bird === currentbird }"
-      v-for="bird in birds"
+      v-for="bird in filterBirds()"
       v-bind:key="bird.id"
       v-on:mouseover="currentbird = bird"
     >
@@ -57,9 +75,6 @@ export default {
         <!-- <button v-on:click="showBird(bird)">More test Info</button> -->
       </div>
     </div>
-  </div>
-  <div v-for="location in locations" v-bind:key="location.state">
-    <h2>{{ location.state }}</h2>
   </div>
 </template>
 

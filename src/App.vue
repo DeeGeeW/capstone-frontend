@@ -27,6 +27,9 @@
           <li v-if="isLoggedIn" class="nav-item">
             <a class="nav-link" href="/logout">Log Out</a>
           </li>
+          <li v-if="!isLoggedIn" class="nav-item">
+            <a class="nav-link" href="/locations">Search by State</a>
+          </li>
         </ul>
       </div>
     </div>
