@@ -74,9 +74,9 @@ export default {
       </div>
     </div>
   </div>
-  <div v-for="location in locations" v-bind:key="location.state">
+  <!-- <div v-for="location in locations" v-bind:key="location.state">
     <h2>{{ location.state }}</h2>
-  </div>
+  </div> -->
 </template>
 
 <style>

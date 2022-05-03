@@ -3,7 +3,7 @@
     <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }" v-bind:key="bird.id"></div> -->
     <h1 class="info-border">{{ bird.c_name }}</h1>
     <!-- <p>c_name: {{ bird.c_name }}</p> -->
-    <img v-bind:src="bird.image_url" v-bind:alt="bird.c_name" style="max-width: 250px" />
+    <img class="bird-image" v-bind:src="bird.image_url" v-bind:alt="bird.c_name" style="max-width: 250px" />
     <p class="info-border">Scientific Name: {{ bird.s_name }}</p>
     <p class="info-border">Description: {{ bird.description }}</p>
     <!-- <p>{{ bird.comments[0].comment_text }}</p> -->
@@ -72,10 +72,17 @@ div .comment-box {
 .test {
   height: 100px;
 }
+.bird-image {
+  border-radius: 50px;
+}
 
 .info-border {
   border-style: inset;
   color: aquamarine;
   background-color: blueviolet;
+  border-radius: 10px;
+
+  display: inline-block;
+  /* text-align: center; */
 }
 </style>

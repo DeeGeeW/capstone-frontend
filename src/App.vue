@@ -27,7 +27,7 @@
           <li v-if="isLoggedIn" class="nav-item">
             <a class="nav-link" href="/logout">Log Out</a>
           </li>
-          <li v-if="!isLoggedIn" class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="/locations">Search by State</a>
           </li>
         </ul>
@@ -78,9 +78,16 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-
-.navbar-brand {
+.html .home {
+  min-height: 100%;
+  min-width: 100%;
+  background-size: cover;
+  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
 }
+/* .navbar-brand {
+} */
 
 nav a.router-link-exact-active {
   color: #42b983;

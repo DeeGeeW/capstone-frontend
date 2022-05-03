@@ -83,6 +83,7 @@ export default {
 .selected .card-body {
   color: black;
   background-color: gold;
+  /* padding: 30px; */
 }
 .card-body {
   background-color: rgb(54, 53, 53);
@@ -92,8 +93,25 @@ img {
   object-fit: cover;
 }
 .home {
+  /* min-height: 100%;
   background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center; */
   font-family: "Tapestry", cursive;
 }
+.html .home {
+  min-height: 100%;
+  min-width: 100%;
+  background-size: cover;
+  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card {
+  margin: 20px;
+}
+/* .d-flex {
+  
+} */
 </style>
