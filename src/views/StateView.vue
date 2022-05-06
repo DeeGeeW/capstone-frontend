@@ -93,7 +93,7 @@ img {
   object-fit: cover;
 }
 .home {
-  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
+  /* background-image: url("https://cache.desktopnexus.com/cropped-wallpapers/2370/2370548-1680x1050-[DesktopNexus.com].jpg?st=7gLD1096gAgSnoYecksA_Q&e=1651804998"); */
   background-size: cover;
   font-family: "Tapestry", cursive;
 }

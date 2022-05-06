@@ -78,7 +78,7 @@ nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-.html .home {
+.home {
   min-height: 100%;
   min-width: 100%;
   background-size: cover;

@@ -6,6 +6,7 @@ import LoginView from "../views/LoginView.vue";
 import LogoutView from "../views/LogoutView.vue";
 import BirdView from "../views/BirdView.vue";
 import StateView from "../views/StateView.vue";
+import StateIndView from "../views/StateIndView.vue";
 // import BirdIndex from "../views/BirdIndex.vue";
 
 const routes = [
@@ -34,6 +35,11 @@ const routes = [
     path: "/locations",
     name: "locations-view",
     component: StateView,
+  },
+  {
+    path: "/locations/:id",
+    name: "state-view",
+    component: StateIndView,
   },
   // {
   //   path: "/signup",
