@@ -16,7 +16,16 @@
       <p>{{ comment.comment_text }}</p>
       <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
       <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
+      <div>
+        <button v-on:click="setMap(comment)">Fly</button>
+      </div>
     </div>
+    <dialog id="map">
+      <form method="modal">
+        <h1>teste!</h1>
+        <button>close</button>
+      </form>
+    </dialog>
     <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
     <!-- <button v-on:click="destroybird()">Delete</button> -->
   </div>
@@ -46,14 +55,17 @@ export default {
   //   }
   // }
   // console.log(0);
-  // methods: {
-  //   destroybird() {
-  //     axios.delete(`/birds/${this.bird.id}`).then((response) => {
-  //       console.log(response);
-  //       this.$router.push("/birds");
-  //     });
-  //   },
-  // },
+  methods: {
+    setMap() {
+      // mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
+      // const map = new mapboxgl.Map({
+      //   container: "map", // container ID
+      //   style: "mapbox://styles/mapbox/dark-v10", // style URL
+      //   center: [comment.long, comment.lat], // starting position [lng, lat]
+      //   zoom: 9, // starting zoom
+      document.querySelector("#map").showModal();
+    },
+  },
 };
 </script>
 
