@@ -10,22 +10,37 @@
     <!-- <div class="container">
       <p v-for="bird.comment in comments", v-text"comment"></p>
     </div> -->
+    <router-link to="/comments">SHARE SPOT!!</router-link>
     <router-link to="/" style="margin-right: 10px">Back to all birds</router-link>
-    <div class="comment-box" v-for="comment in bird.comments" v-bind:key="comment.id">
+    <div class="comment-box" v-for="comment in comments" v-bind:key="comment.id">
       <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
       <p>{{ comment.comment_text }}</p>
       <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
       <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
       <div>
-        <button v-on:click="setMap(comment)">Fly</button>
+        <button v-on:click="setMap()">Fly</button>
       </div>
+      <dialog id="map">
+        <form method="modal">
+          <button>LAND!</button>
+          <h1>teste!</h1>
+          <p>{{ comment.id }}</p>
+          <p>{{ comment.long }}</p>
+          <p>{{ comment.lat }}</p>
+        </form>
+      </dialog>
     </div>
-    <dialog id="map">
-      <form method="modal">
-        <h1>teste!</h1>
-        <button>close</button>
-      </form>
-    </dialog>
+    <!-- <div v-for="comment in bird.comments" v-bind:key="comment.id">
+      <dialog id="map">
+        <form method="modal">
+          <button>LAND!</button>
+          <h1>teste!</h1>
+          <p>{{ comment.id }}</p>
+          <p>{{ comment.long }}</p>
+          <p>{{ comment.lat }}</p>
+        </form>
+      </dialog>
+    </div> -->
     <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
     <!-- <button v-on:click="destroybird()">Delete</button> -->
   </div>
@@ -38,13 +53,17 @@ export default {
   data: function () {
     return {
       bird: {},
-      // comment: {},
+      currentComment: {},
+      comments: {},
     };
   },
   mounted: function () {
     console.log(this.$route.params.id);
     axios.get(`/birds/${this.$route.params.id}`).then((response) => {
+      console.log("teste");
       this.bird = response.data;
+      this.comments = this.bird.comments;
+      console.log(this.comment);
       console.log(this.bird);
     });
   },
@@ -56,12 +75,19 @@ export default {
   // }
   // console.log(0);
   methods: {
+    // getPlaces() {
+    //   // make axios
+    //   this.places = [
+    //     { lat: comment.lat, lng: comment.long, description: "The Link" },
+    //   ];
+    //   this.setMap();
+    // },
     setMap() {
       // mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
       // const map = new mapboxgl.Map({
       //   container: "map", // container ID
       //   style: "mapbox://styles/mapbox/dark-v10", // style URL
-      //   center: [comment.long, comment.lat], // starting position [lng, lat]
+      //   center: [this.places[0].lng, this.places[0].lat], // starting position [lng, lat]
       //   zoom: 9, // starting zoom
       document.querySelector("#map").showModal();
     },
