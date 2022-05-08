@@ -30,6 +30,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/locations">Search by State</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/comments">Share YO Local Spot!</a>
+          </li>
         </ul>
       </div>
     </div>

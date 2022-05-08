@@ -15,6 +15,7 @@
     <!-- <div class="container">
       <p v-for="location.comment in comments", v-text"comment"></p>
     </div> -->
+    <router-link to="/comments">SHARE SPOT!!</router-link>
     <router-link to="/locations" style="margin-right: 10px">Back to all locations</router-link>
     <div class="comment-box-state" v-for="comment in location.comments" v-bind:key="comment.id">
       <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>

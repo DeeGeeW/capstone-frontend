@@ -18,29 +18,30 @@
       <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
       <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
       <div>
-        <button v-on:click="setMap()">Fly</button>
+        <button v-on:click="setMap(comment)">Fly</button>
       </div>
-      <dialog id="map">
+      <!-- <dialog id="map">
         <form method="modal">
           <button>LAND!</button>
           <h1>teste!</h1>
+          <p>{{ comment }}</p>
           <p>{{ comment.id }}</p>
           <p>{{ comment.long }}</p>
           <p>{{ comment.lat }}</p>
         </form>
-      </dialog>
+      </dialog> -->
     </div>
-    <!-- <div v-for="comment in bird.comments" v-bind:key="comment.id">
-      <dialog id="map">
-        <form method="modal">
-          <button>LAND!</button>
-          <h1>teste!</h1>
-          <p>{{ comment.id }}</p>
-          <p>{{ comment.long }}</p>
-          <p>{{ comment.lat }}</p>
-        </form>
-      </dialog>
-    </div> -->
+    <!-- <div v-for="comment in bird.comments" v-bind:key="comment.id"> -->
+    <dialog id="map">
+      <form method="modal">
+        <button>LAND!</button>
+        <h1>teste!</h1>
+        <p>{{ this.currentBird.id }}</p>
+        <p>{{ this.currentBird.long }}</p>
+        <p>{{ this.currentBird.lat }}</p>
+      </form>
+    </dialog>
+    <!-- </div> -->
     <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
     <!-- <button v-on:click="destroybird()">Delete</button> -->
   </div>
@@ -55,6 +56,7 @@ export default {
       bird: {},
       currentComment: {},
       comments: {},
+      currentBird: [],
     };
   },
   mounted: function () {
@@ -82,13 +84,14 @@ export default {
     //   ];
     //   this.setMap();
     // },
-    setMap() {
+    setMap(bird) {
       // mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
       // const map = new mapboxgl.Map({
       //   container: "map", // container ID
       //   style: "mapbox://styles/mapbox/dark-v10", // style URL
       //   center: [this.places[0].lng, this.places[0].lat], // starting position [lng, lat]
       //   zoom: 9, // starting zoom
+      this.currentBird = bird;
       document.querySelector("#map").showModal();
     },
   },
