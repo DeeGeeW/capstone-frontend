@@ -20,18 +20,7 @@
       <div>
         <button v-on:click="setMap(comment)">Fly</button>
       </div>
-      <!-- <dialog id="map">
-        <form method="modal">
-          <button>LAND!</button>
-          <h1>teste!</h1>
-          <p>{{ comment }}</p>
-          <p>{{ comment.id }}</p>
-          <p>{{ comment.long }}</p>
-          <p>{{ comment.lat }}</p>
-        </form>
-      </dialog> -->
     </div>
-    <!-- <div v-for="comment in bird.comments" v-bind:key="comment.id"> -->
     <dialog id="map">
       <form method="modal">
         <button>LAND!</button>
@@ -41,11 +30,7 @@
         <p>{{ this.currentBird.lat }}</p>
       </form>
     </dialog>
-    <!-- </div> -->
-    <!-- <router-link v-bind:to="`/birds/${bird.id}/edit`" style="margin-right: 10px">Edit bird</router-link> -->
-    <!-- <button v-on:click="destroybird()">Delete</button> -->
   </div>
-  <!-- </div> -->
 </template>
 
 <script>

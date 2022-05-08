@@ -55,6 +55,7 @@ export default {
         placeholder="Search by Bird Common Name"
         aria-label="Search by Bird Common Name"
         v-model="searchText"
+        style="width: 400px"
       />
       <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchBirds()">Search</button> -->
     </div>

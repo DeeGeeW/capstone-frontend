@@ -53,6 +53,7 @@ export default {
         placeholder="Search by State (Abv)."
         aria-label="Search by State (Abv)."
         v-model="searchText"
+        style="width: 200px"
       />
       <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchlocations()">Search</button> -->
     </div>
@@ -96,5 +97,9 @@ img {
   /* background-image: url("https://cache.desktopnexus.com/cropped-wallpapers/2370/2370548-1680x1050-[DesktopNexus.com].jpg?st=7gLD1096gAgSnoYecksA_Q&e=1651804998"); */
   background-size: cover;
   font-family: "Tapestry", cursive;
+}
+.form-control {
+  margin: 20px;
+  text-align: center;
 }
 </style>

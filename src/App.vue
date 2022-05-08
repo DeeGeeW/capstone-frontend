@@ -47,6 +47,9 @@
     <router-link to="/login">Login</router-link>
   </nav> -->
   <router-view />
+  <footer style="height: auto; background-color: #f7c201">
+    <h1>L.L.K. STUDIOS</h1>
+  </footer>
 </template>
 <script>
 export default {
@@ -94,5 +97,10 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+footer {
+  padding: 60px;
+  color: black;
+  font-family: "Sriracha", cursive;
 }
 </style>

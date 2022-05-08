@@ -37,7 +37,7 @@ export default {
           Example: Theres a "bluff or cave or whatever cool area" at "park name" where i saw "bird name" in "season".
         </p>
         <label>Comment:</label>
-        <input type="text" v-model="newCommentParams.comment_text" />
+        <input type="text" style="width: 1000px" v-model="newCommentParams.comment_text" />
       </div>
       <br />
       <div>
@@ -57,13 +57,13 @@ export default {
       <div>
         <p>Refer to chart Below for bird id.</p>
         <label>Bird Id:</label>
-        <input type="int" v-model="newCommentParams.bird_id" />
+        <input type="int" style="width: 30px" v-model="newCommentParams.bird_id" />
       </div>
       <br />
       <div>
         <p>Refer to chart below for state id.</p>
         <label>State Id:</label>
-        <input type="int" v-model="newCommentParams.location_id" />
+        <input type="int" style="width: 30px" v-model="newCommentParams.location_id" />
       </div>
       <br />
       <input type="submit" value="Submit" />
@@ -75,6 +75,7 @@ export default {
 .add-comment {
   text-align: left;
   padding: 30px;
+  font-family: "Tapestry", cursive;
   background-image: url("https://wallpx.com/image/2020/11/lights-scenic-particles-anime-landscape-polychromatic.jpg");
   background-repeat: no-repeat;
   background-size: auto;
@@ -84,11 +85,13 @@ export default {
   /* overflow: hidden; */
   /* text-overflow: ellipsis; */
   border: inset;
+  border-radius: 10px;
   background-color: darkslategray;
   display: flex;
 }
 .add-comment label {
   border: inset;
+  border-radius: 10px;
   background-color: black;
 }
 </style>
