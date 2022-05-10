@@ -70,12 +70,6 @@ export default {
     //   this.setMap();
     // },
     setMap(bird) {
-      // mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
-      // const map = new mapboxgl.Map({
-      //   container: "map", // container ID
-      //   style: "mapbox://styles/mapbox/dark-v10", // style URL
-      //   center: [this.places[0].lng, this.places[0].lat], // starting position [lng, lat]
-      //   zoom: 9, // starting zoom
       this.currentBird = bird;
       document.querySelector("#map").showModal();
     },

@@ -97,15 +97,16 @@ export default {
       </form>
       <br />
       <div class="row">
-        <div
-          class="column"
-          style="background-image: url(https://www.bird-call.com/.a/6a0168e8f63fb1970c01a73d7280a9970d-pi)"
-        >
+        <div class="column">
+          <h2>Bird Id:</h2>
+          <br />
           <div v-for="bird in birds" v-bind:key="bird.c_name">
             <p>{{ bird.id }}: {{ bird.c_name }}</p>
           </div>
         </div>
-        <div class="column" style="background-image: url(https://cdn.wallpapersafari.com/94/1/GeaVpq.jpg)">
+        <div class="column">
+          <h2>Location Id:</h2>
+          <br />
           <div v-for="location in locations" v-bind:key="location.c_name">
             <p>{{ location.id }}: {{ location.state }}</p>
           </div>
@@ -150,5 +151,12 @@ export default {
 .column {
   flex: 50%;
   padding: 10px;
+}
+.comment-bg h2 {
+  border: inset;
+  border-radius: 10px;
+  background-color: black;
+  display: flex;
+  display: inline;
 }
 </style>

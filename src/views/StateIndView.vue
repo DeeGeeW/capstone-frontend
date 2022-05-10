@@ -1,7 +1,6 @@
 <template>
   <div class="location-page">
     <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${location.background_url})` }" v-bind:key="location.id"></div> -->
-    <h1 class="info-border-state"></h1>
     <!-- <p>c_name: {{ location.c_name }}</p> -->
     <img
       class="location-image"
@@ -16,7 +15,7 @@
       <p v-for="location.comment in comments", v-text"comment"></p>
     </div> -->
     <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
-    <router-link class="routes" to="/locations" style="margin-right: 10px">Back to all locations</router-link>
+    <router-link class="routes" to="/locations">Back to all locations</router-link>
     <div class="comment-box-state" v-for="comment in location.comments" v-bind:key="comment.id">
       <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
       <p>{{ comment.comment_text }}</p>
@@ -90,20 +89,15 @@ export default {
   background-image: url(location.background_url);
 } */
 .location-page {
-  font-family: Rubik Bubbles;
-  background-image: url("https://c4.wallpaperflare.com/wallpaper/942/211/578/one-piece-anime-girls-map-anime-boys-wallpaper-preview.jpg");
+  background-image: url("https://img.freepik.com/free-vector/log-bridge-mountains-cliff-rock-peaks-landscape-with-waterfall-trees-background-beautiful-scenery-nature-view-beam-bridgework-connect-rocky-edges-cartoon-vector-illustration_107791-4568.jpg?t=st=1652148562~exp=1652149162~hmac=e9cc89e6f296085584341a989515f567bd6665ba55fe868321c8dd35a977bf10&w=1380");
+}
+.location-page img {
+  margin: 50px;
 }
 .comment-box-state {
   border-style: inset;
   color: gold;
   background-color: black;
-}
-.test {
-  height: 100px;
-}
-.location-image {
-  border-radius: 50px;
-  padding: 40px;
 }
 
 .info-border-state {
