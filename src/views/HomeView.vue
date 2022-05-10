@@ -46,37 +46,39 @@ export default {
 </script>
 
 <template>
-  <div class="home row">
-    <h1>Choose Bird. Find Bird. Share Bird.</h1>
-    <div class="d-flex">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search by Bird Common Name"
-        aria-label="Search by Bird Common Name"
-        v-model="searchText"
-        style="width: 400px"
-      />
-      <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchBirds()">Search</button> -->
-    </div>
-    <div
-      class="col"
-      v-bind:class="{ selected: bird === currentbird }"
-      v-for="bird in filterBirds()"
-      v-bind:key="bird.id"
-      v-on:mouseover="currentbird = bird"
-    >
-      <div class="card" style="width: 18rem">
-        <img v-bind:src="bird.image_url" class="card-img-top" v-bind:alt="bird.c_name" />
-        <div class="card-body">
-          <!-- <h5 class="card-title">{{ bird.name }}</h5> -->
-          <p class="card-text">{{ bird.c_name }}</p>
-          <a v-bind:href="`/birds/${bird.id}`" class="btn btn-primary">More Info</a>
+  <body class="home-bg">
+    <div class="home row">
+      <h1>Choose Bird. Find Bird. Share Bird.</h1>
+      <div class="d-flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search by Bird Common Name"
+          aria-label="Search by Bird Common Name"
+          v-model="searchText"
+          style="width: 400px"
+        />
+        <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchBirds()">Search</button> -->
+      </div>
+      <div
+        class="col"
+        v-bind:class="{ selected: bird === currentbird }"
+        v-for="bird in filterBirds()"
+        v-bind:key="bird.id"
+        v-on:mouseover="currentbird = bird"
+      >
+        <div class="card" style="width: 18rem">
+          <img v-bind:src="bird.image_url" class="card-img-top" v-bind:alt="bird.c_name" />
+          <div class="card-body">
+            <!-- <h5 class="card-title">{{ bird.name }}</h5> -->
+            <p class="card-text">{{ bird.c_name }}</p>
+            <a v-bind:href="`/birds/${bird.id}`" class="btn btn-primary">More Info</a>
+          </div>
+          <!-- <button v-on:click="showBird(bird)">More test Info</button> -->
         </div>
-        <!-- <button v-on:click="showBird(bird)">More test Info</button> -->
       </div>
     </div>
-  </div>
+  </body>
 </template>
 
 <style>
@@ -93,26 +95,10 @@ img {
   height: 200px;
   object-fit: cover;
 }
-.home {
-  /* min-height: 100%;
-  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center; */
-  font-family: "Tapestry", cursive;
-}
-.html .home {
-  min-height: 100%;
-  min-width: 100%;
-  background-size: cover;
-  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-}
 .card {
   margin: 20px;
 }
 /* .d-flex {
-  
+
 } */
 </style>

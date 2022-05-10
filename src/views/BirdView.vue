@@ -10,8 +10,8 @@
     <!-- <div class="container">
       <p v-for="bird.comment in comments", v-text"comment"></p>
     </div> -->
-    <router-link to="/comments">SHARE SPOT!!</router-link>
-    <router-link to="/" style="margin-right: 10px">Back to all birds</router-link>
+    <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
+    <router-link class="routes" to="/" style="margin-right: 10px">Back to all birds</router-link>
     <div class="comment-box" v-for="comment in comments" v-bind:key="comment.id">
       <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
       <p>{{ comment.comment_text }}</p>
@@ -84,9 +84,6 @@ export default {
 </script>
 
 <style>
-/* div {
-  background-image: url(bird.background_url);
-} */
 .bird-page {
   font-family: Rubik Bubbles;
 }
@@ -99,6 +96,7 @@ div .comment-box {
   height: 100px;
 }
 .bird-image {
+  padding: 30px;
   border-radius: 50px;
 }
 
@@ -110,5 +108,10 @@ div .comment-box {
 
   display: inline-block;
   /* text-align: center; */
+}
+.routes {
+  border-style: inset;
+  background-color: aquamarine;
+  color: blueviolet;
 }
 </style>

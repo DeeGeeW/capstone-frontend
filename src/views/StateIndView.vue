@@ -1,5 +1,5 @@
 <template>
-  <div class="location-page" v-bind:style="{ backgroundImage: `url(${location.location_comments})` }">
+  <div class="location-page">
     <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${location.background_url})` }" v-bind:key="location.id"></div> -->
     <h1 class="info-border-state"></h1>
     <!-- <p>c_name: {{ location.c_name }}</p> -->
@@ -91,6 +91,7 @@ export default {
 } */
 .location-page {
   font-family: Rubik Bubbles;
+  background-image: url("https://c4.wallpaperflare.com/wallpaper/942/211/578/one-piece-anime-girls-map-anime-boys-wallpaper-preview.jpg");
 }
 .comment-box-state {
   border-style: inset;
@@ -102,6 +103,7 @@ export default {
 }
 .location-image {
   border-radius: 50px;
+  padding: 40px;
 }
 
 .info-border-state {
@@ -118,5 +120,8 @@ export default {
   border-style: inset;
   background-color: aquamarine;
   color: blueviolet;
+  border-radius: 8px;
+  padding: 3px;
+  margin: 8px;
 }
 </style>

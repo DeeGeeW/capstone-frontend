@@ -48,7 +48,7 @@
   </nav> -->
   <router-view />
   <footer style="height: auto; background-color: #f7c201">
-    <h1>L.L.K. STUDIOS</h1>
+    <h1>L.L.K. ent.</h1>
   </footer>
 </template>
 <script>
@@ -79,25 +79,44 @@ nav {
   padding: 30px;
   font-family: Rubik Bubbles;
 }
-
-nav a {
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.nav a {
   font-weight: bold;
   color: #2c3e50;
 }
-.home {
-  min-height: 100%;
-  min-width: 100%;
-  background-size: cover;
-  background-image: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg");
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-/* .navbar-brand {
-} */
 
 nav a.router-link-exact-active {
   color: #42b983;
 }
+.home-bg {
+  background: url("https://img3.goodfon.com/original/1680x1050/0/2c/art-canarinu-kmes-paren-les.jpg") no-repeat center
+    center fixed;
+  min-height: 100%;
+  min-width: 100%;
+  color: goldenrod;
+}
+.home-bg h1 {
+  border-style: inset;
+  border-color: black;
+}
+.state-bg {
+  background: url("https://w.wallha.com/ws/2/WEtncSuB.jpg") no-repeat center center fixed;
+  min-height: 100%;
+  min-width: 100%;
+}
+.comment-bg {
+  background: url("https://cache.desktopnexus.com/cropped-wallpapers/2370/2370548-1680x1050-[DesktopNexus.com].jpg?st=mISdrvGwb05gZ8yldIk7OQ&e=1652146372")
+    no-repeat center center fixed;
+  min-height: 100%;
+  min-width: 100%;
+  color: goldenrod;
+}
+
 footer {
   padding: 60px;
   color: black;
