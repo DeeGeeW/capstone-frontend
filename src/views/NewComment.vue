@@ -62,9 +62,9 @@ export default {
         </div>
         <br />
         <div>
-          <p>Guideline: Give longitide to the 5th decimal! It will be negative so dont forget the "-"</p>
+          <p>Guideline: Give longitide to the 5th decimal! It will be negative in the U.S. so dont forget the "-"</p>
           <br />
-          <p>Example: Appalacian Mountain trailhead Springer Mountain, longitude: -84.19531</p>
+          <p>Example: Appalacian trailhead Springer Mountain, longitude: -84.19531</p>
           <br />
           <label>Longitude:</label>
           <input type="decimal" v-model="newCommentParams.long" />
@@ -73,21 +73,21 @@ export default {
         <div>
           <p>Guideline: Give Lattitude to the 5th decimal!</p>
           <br />
-          <p>Example: Appalacian Mountain trailhead Springer Mountain, lattitude: 34.63746</p>
+          <p>Example: Appalacian trailhead Springer Mountain, lattitude: 34.63746</p>
           <br />
           <label>Lattitude:</label>
           <input type="decimal" v-model="newCommentParams.lat" />
         </div>
         <br />
         <div>
-          <p>Refer to chart Below for bird id.</p>
+          <p>Refer to chart Below for bird id #.</p>
           <br />
           <label>Bird Id:</label>
           <input type="int" style="width: 30px" v-model="newCommentParams.bird_id" />
         </div>
         <br />
         <div>
-          <p>Refer to chart below for state id.</p>
+          <p>Refer to chart below for state id #.</p>
           <br />
           <label>State Id:</label>
           <input type="int" style="width: 30px" v-model="newCommentParams.location_id" />

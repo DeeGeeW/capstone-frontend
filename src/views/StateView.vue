@@ -69,7 +69,7 @@ export default {
           <img v-bind:src="location.location_comments" class="card-img-top" v-bind:alt="location.c_name" />
           <div class="card-body">
             <!-- <h5 class="card-title">{{ location.name }}</h5> -->
-            <p class="card-text">{{ location.c_name }}</p>
+            <p class="card-text">{{ location.state }}</p>
             <a v-bind:href="`/locations/${location.id}`" class="btn btn-primary">More Info</a>
           </div>
           <!-- <button v-on:click="showlocation(location)">More test Info</button> -->
