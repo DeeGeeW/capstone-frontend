@@ -99,6 +99,7 @@ nav a.router-link-exact-active {
   min-height: 100%;
   min-width: 100%;
   color: goldenrod;
+  padding-bottom: 800px;
 }
 .home-bg h1 {
   border-style: inset;
@@ -108,6 +109,7 @@ nav a.router-link-exact-active {
   background: url("https://w.wallha.com/ws/2/WEtncSuB.jpg") no-repeat center center fixed;
   min-height: 100%;
   min-width: 100%;
+  padding-bottom: 800px;
 }
 .state-bg h1 {
   border-style: inset;
