@@ -3,14 +3,9 @@
     <div class="bird-page" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }">
       <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }" v-bind:key="bird.id"></div> -->
       <h1 class="info-border">{{ bird.c_name }}</h1>
-      <!-- <p>c_name: {{ bird.c_name }}</p> -->
       <img class="bird-image" v-bind:src="bird.image_url" v-bind:alt="bird.c_name" style="max-width: 250px" />
       <p class="info-border">Scientific Name: {{ bird.s_name }}</p>
       <p class="info-border">Description: {{ bird.description }}</p>
-      <!-- <p>{{ bird.comments[0].comment_text }}</p> -->
-      <!-- <div class="container">
-      <p v-for="bird.comment in comments", v-text"comment"></p>
-    </div> -->
       <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
       <router-link class="routes" to="/" style="margin-right: 10px">Back to all birds</router-link>
       <div class="comment-box" v-for="comment in comments" v-bind:key="comment.id">
@@ -24,11 +19,7 @@
       </div>
       <dialog id="map">
         <form method="modal">
-          <!-- <button>LAND!</button>
-        <h1>teste!</h1>
-        <p>{{ this.currentBird.id }}</p>
-        <p>{{ this.currentBird.long }}</p>
-        <p>{{ this.currentBird.lat }}</p> -->
+          <!-- <p>{{ this.currentBird.id }}</p> -->
         </form>
       </dialog>
     </div>
@@ -78,8 +69,7 @@ export default {
     setMap(bird) {
       this.currentBird = bird;
       document.querySelector("#map").showModal();
-      mapboxgl.accessToken =
-        "pk.eyJ1IjoiZWFnbGVzZmFuODkiLCJhIjoiY2wzMGgzZmZtMDBwOTNkcGRyNWxrb3NlNCJ9.tFaIEmtceV5FiKm9jwHxGQ";
+      mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
       const map = new mapboxgl.Map({
         container: "map", // container ID
         style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
@@ -102,7 +92,7 @@ export default {
 div .comment-box {
   border-style: inset;
   color: Black;
-  background-color: gold;
+  background-image: url("https://ca-times.brightspotcdn.com/dims4/default/ed38845/2147483647/strip/true/crop/5000x3333+0+0/resize/1240x827!/format/webp/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F90%2F72%2F04a53e28421cbd1e09c4506610e7%2Fla-tr-birdwatching-web-final.jpg");
   margin: 8px;
 }
 .comment-box h3 {
@@ -110,6 +100,13 @@ div .comment-box {
   color: gold;
   background-color: black;
   border-radius: 10px;
+}
+.comment-box p {
+  border-style: inset;
+  color: gold;
+  background-color: black;
+  border-radius: 10px;
+  display: inline-block;
 }
 .test {
   height: 100px;
@@ -121,13 +118,8 @@ div .comment-box {
 #map {
   height: 600px;
   width: 600px;
-}
-/* .modal {
   position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-} */
+}
 .info-border {
   border-style: inset;
   color: aquamarine;
