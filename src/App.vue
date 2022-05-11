@@ -84,6 +84,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  font-family: "Tapestry", cursive;
 }
 .nav a {
   font-weight: bold;

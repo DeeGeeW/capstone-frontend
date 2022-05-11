@@ -1,43 +1,45 @@
 <template>
-  <div class="location-page">
-    <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${location.background_url})` }" v-bind:key="location.id"></div> -->
-    <!-- <p>c_name: {{ location.c_name }}</p> -->
-    <img
-      class="location-image"
-      v-bind:src="location.location_comments"
-      v-bind:alt="location.c_name"
-      style="max-width: 250px"
-    />
-    <!-- <p class="info-border">Scientific Name: {{ location.s_name }}</p> -->
-    <!-- <p class="info-border">Description: {{ location.state_bird }}</p> -->
-    <!-- <p>{{ location.comments[0].comment_text }}</p> -->
-    <!-- <div class="container">
+  <body class="state-ind-bg">
+    <div class="location-page">
+      <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${location.background_url})` }" v-bind:key="location.id"></div> -->
+      <!-- <p>c_name: {{ location.c_name }}</p> -->
+      <img
+        class="location-image"
+        v-bind:src="location.location_comments"
+        v-bind:alt="location.c_name"
+        style="max-width: 250px"
+      />
+      <!-- <p class="info-border">Scientific Name: {{ location.s_name }}</p> -->
+      <!-- <p class="info-border">Description: {{ location.state_bird }}</p> -->
+      <!-- <p>{{ location.comments[0].comment_text }}</p> -->
+      <!-- <div class="container">
       <p v-for="location.comment in comments", v-text"comment"></p>
     </div> -->
-    <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
-    <router-link class="routes" to="/locations">Back to all locations</router-link>
-    <div class="comment-box-state" v-for="comment in location.comments" v-bind:key="comment.id">
-      <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
-      <p>{{ comment.comment_text }}</p>
-      <!-- <p>{{ location.c_name }} | State ID: {{ comment.location_id }}</p> -->
-      <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
-      <div>
-        <button v-on:click="setMap(comment)">Fly</button>
+      <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
+      <router-link class="routes" to="/locations">Back to all locations</router-link>
+      <div class="comment-box-state" v-for="comment in location.comments" v-bind:key="comment.id">
+        <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
+        <p>{{ comment.comment_text }}</p>
+        <!-- <p>{{ location.c_name }} | State ID: {{ comment.location_id }}</p> -->
+        <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
+        <div>
+          <button v-on:click="setMap(comment)">Fly</button>
+        </div>
       </div>
+      <dialog id="map">
+        <form method="modal">
+          <button>LAND!</button>
+          <h1>teste!</h1>
+          <p>{{ this.currentLocation.id }}</p>
+          <p>{{ this.currentLocation.long }}</p>
+          <p>{{ this.currentLocation.lat }}</p>
+        </form>
+      </dialog>
+      <!-- <router-link v-bind:to="`/locations/${location.id}/edit`" style="margin-right: 10px">Edit location</router-link> -->
+      <!-- <button v-on:click="destroylocation()">Delete</button> -->
     </div>
-    <dialog id="map">
-      <form method="modal">
-        <button>LAND!</button>
-        <h1>teste!</h1>
-        <p>{{ this.currentLocation.id }}</p>
-        <p>{{ this.currentLocation.long }}</p>
-        <p>{{ this.currentLocation.lat }}</p>
-      </form>
-    </dialog>
-    <!-- <router-link v-bind:to="`/locations/${location.id}/edit`" style="margin-right: 10px">Edit location</router-link> -->
-    <!-- <button v-on:click="destroylocation()">Delete</button> -->
-  </div>
-  <!-- </div> -->
+    <!-- </div> -->
+  </body>
 </template>
 
 <script>

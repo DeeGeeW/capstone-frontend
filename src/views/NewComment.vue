@@ -126,9 +126,6 @@ export default {
   background-size: auto; */
 }
 .add-comment p {
-  /* white-space: nowrap; */
-  /* overflow: hidden; */
-  /* text-overflow: ellipsis; */
   border: inset;
   border-radius: 10px;
   background-color: darkslategray;

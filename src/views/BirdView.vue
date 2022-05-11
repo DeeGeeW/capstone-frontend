@@ -99,9 +99,6 @@ export default {
 </script>
 
 <style>
-.bird-page {
-  font-family: Rubik Bubbles;
-}
 div .comment-box {
   border-style: inset;
   color: Black;
@@ -125,8 +122,11 @@ div .comment-box {
   height: 600px;
   width: 600px;
 }
-/* .bird-page .backgroundImage {
-  size: 150px;
+/* .modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 } */
 .info-border {
   border-style: inset;

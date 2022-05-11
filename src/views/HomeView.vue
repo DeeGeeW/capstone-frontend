@@ -67,7 +67,7 @@ export default {
         v-bind:key="bird.id"
         v-on:mouseover="currentbird = bird"
       >
-        <div class="card" style="width: 18rem">
+        <div v-if="searchText" class="card" style="width: 18rem">
           <img v-bind:src="bird.image_url" class="card-img-top" v-bind:alt="bird.c_name" />
           <div class="card-body">
             <!-- <h5 class="card-title">{{ bird.name }}</h5> -->
@@ -83,22 +83,18 @@ export default {
 
 <style>
 /* div {text} */
-.selected .card-body {
+.home-bg .selected .card-body {
   color: black;
   background-color: gold;
-  /* padding: 30px; */
 }
-.card-body {
+.home-bg .card-body {
   background-color: rgb(54, 53, 53);
 }
-img {
+/* img {
   height: 200px;
   object-fit: cover;
-}
+} */
 .card {
   margin: 20px;
 }
-/* .d-flex {
-
-} */
 </style>
