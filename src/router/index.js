@@ -8,6 +8,7 @@ import BirdView from "../views/BirdView.vue";
 import StateView from "../views/StateView.vue";
 import StateIndView from "../views/StateIndView.vue";
 import NewComment from "../views/NewComment.vue";
+import RequestView from "../views/RequestView.vue";
 // import BirdIndex from "../views/BirdIndex.vue";
 
 const routes = [
@@ -46,6 +47,11 @@ const routes = [
     path: "/comments",
     name: "new-comment",
     component: NewComment,
+  },
+  {
+    path: "/requests",
+    name: "new-request",
+    component: RequestView,
   },
   // {
   //   path: "/signup",

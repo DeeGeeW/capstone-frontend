@@ -29,7 +29,7 @@ export default {
     },
     showLocation(location) {
       axios.get(`/locations/${location.id}`).then((response) => {
-        this.currentlocation = response.data;
+        this.currentLocation = response.data;
         document.querySelector("#location-details").showModal();
       });
     },

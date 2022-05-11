@@ -33,6 +33,9 @@
           <li class="nav-item">
             <a class="nav-link" href="/comments">Share YO Local Spot!</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/requests">Request New Bird</a>
+          </li>
         </ul>
       </div>
     </div>

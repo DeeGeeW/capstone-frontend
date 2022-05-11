@@ -44,22 +44,9 @@ export default {
     axios.get(`/birds/${this.$route.params.id}`).then((response) => {
       this.bird = response.data;
       this.comments = this.bird.comments;
-      console.log(this.comment);
       console.log(this.bird);
     });
-    // mapboxgl.accessToken =
-    //   "pk.eyJ1IjoiZWFnbGVzZmFuODkiLCJhIjoiY2wzMGgzZmZtMDBwOTNkcGRyNWxrb3NlNCJ9.tFaIEmtceV5FiKm9jwHxGQ";
-    // const map = new mapboxgl.Map({
-    //   container: "map", // container ID
-    //   style: "mapbox://styles/mapbox/streets-v11", // style URL
-    //   center: [-87.623177, 41.881832], // starting position [lng, lat]
-    //   zoom: 9, // starting zoom
-    // });
-    // console.log(map);
   },
-  // created: function () {
-  //   this.getPlaces();
-  // },
   methods: {
     getPlaces() {
       // make axios
