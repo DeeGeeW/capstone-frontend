@@ -49,7 +49,7 @@ export default {
   <body class="home-bg">
     <div class="home row">
       <h1>Choose Bird. Find Bird. Share Bird.</h1>
-      <div class="d-flex">
+      <div class="d - flex">
         <input
           class="form-control me-2"
           type="search"

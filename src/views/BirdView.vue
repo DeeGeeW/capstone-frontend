@@ -29,11 +29,8 @@
         <p>{{ this.currentBird.id }}</p>
         <p>{{ this.currentBird.long }}</p>
         <p>{{ this.currentBird.lat }}</p> -->
-          <!-- <button>LAND!</button> -->
-        </form>
-        <div>
           <button>LAND!</button>
-        </div>
+        </form>
       </dialog>
     </div>
   </body>
@@ -49,12 +46,12 @@ export default {
       currentComment: {},
       comments: {},
       currentBird: [],
+      places: [],
     };
   },
   mounted: function () {
     console.log(this.$route.params.id);
     axios.get(`/birds/${this.$route.params.id}`).then((response) => {
-      console.log("teste");
       this.bird = response.data;
       this.comments = this.bird.comments;
       console.log(this.comment);
@@ -70,7 +67,15 @@ export default {
     // });
     // console.log(map);
   },
+  // created: function () {
+  //   this.getPlaces();
+  // },
   methods: {
+    getPlaces() {
+      // make axios
+      this.places = [{ lat: this.currentBird.long, lng: this.currentBird.lat, description: "The Link" }];
+      this.setMap();
+    },
     setMap(bird) {
       this.currentBird = bird;
       document.querySelector("#map").showModal();
@@ -79,11 +84,16 @@ export default {
       const map = new mapboxgl.Map({
         container: "map", // container ID
         style: "mapbox://styles/mapbox/streets-v11", // style URL
-        center: [-89.95777, 29.30545], // starting position [lng, lat]
+        center: [this.currentBird.long, this.currentBird.lat], // starting position [lng, lat]
         // center: [this.currentBird.long, this.currentBird.lat],
         zoom: 15, // starting zoom
       });
-      console.log(map);
+      this.places.forEach((place) => {
+        // create the popup
+        const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
+        console.log(map, marker);
+      });
     },
   },
 };
