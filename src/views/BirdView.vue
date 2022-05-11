@@ -29,7 +29,6 @@
         <p>{{ this.currentBird.id }}</p>
         <p>{{ this.currentBird.long }}</p>
         <p>{{ this.currentBird.lat }}</p> -->
-          <button>LAND!</button>
         </form>
       </dialog>
     </div>
@@ -83,10 +82,10 @@ export default {
         "pk.eyJ1IjoiZWFnbGVzZmFuODkiLCJhIjoiY2wzMGgzZmZtMDBwOTNkcGRyNWxrb3NlNCJ9.tFaIEmtceV5FiKm9jwHxGQ";
       const map = new mapboxgl.Map({
         container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v11", // style URL
+        style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
         center: [this.currentBird.long, this.currentBird.lat], // starting position [lng, lat]
         // center: [this.currentBird.long, this.currentBird.lat],
-        zoom: 15, // starting zoom
+        zoom: 19, // starting zoom
       });
       this.places.forEach((place) => {
         // create the popup
