@@ -72,7 +72,7 @@ export default {
           <div class="card-body">
             <!-- <h5 class="card-title">{{ bird.name }}</h5> -->
             <p class="card-text">{{ bird.c_name }}</p>
-            <a v-bind:href="`/birds/${bird.id}`" class="btn btn-primary">More Info</a>
+            <a v-bind:href="`/birds/${bird.id}`" class="btn btn-primary bg-dark">More Info</a>
           </div>
           <!-- <button v-on:click="showBird(bird)">More test Info</button> -->
         </div>

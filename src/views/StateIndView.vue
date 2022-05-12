@@ -19,11 +19,11 @@
       </div>
       <dialog id="map">
         <form method="modal">
-          <button>LAND!</button>
+          <!-- <button>LAND!</button>
           <h1>teste!</h1>
           <p>{{ this.currentLocation.id }}</p>
           <p>{{ this.currentLocation.long }}</p>
-          <p>{{ this.currentLocation.lat }}</p>
+          <p>{{ this.currentLocation.lat }}</p> -->
         </form>
       </dialog>
       <!-- <router-link v-bind:to="`/locations/${location.id}/edit`" style="margin-right: 10px">Edit location</router-link> -->
@@ -43,6 +43,7 @@ export default {
       currentComment: {},
       comments: {},
       currentLocation: [],
+      places: [],
     };
   },
   mounted: function () {
@@ -67,9 +68,9 @@ export default {
       mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
       const map = new mapboxgl.Map({
         container: "map", // container ID
-        style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
-        center: [this.currentLocation.long, this.currentLocation.lat], // starting position [lng, lat]
-        zoom: 19, // starting zoom
+        style: "mapbox://styles/mapbox/streets-v11", // style URL
+        center: [this.currentLocation.long, this.currentLocation.lat], // [lng, lat]
+        zoom: 19, // zoom
       });
       this.places.forEach((place) => {
         // create the popup

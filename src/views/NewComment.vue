@@ -101,6 +101,7 @@ export default {
           <h2>Bird Id:</h2>
           <br />
           <div v-for="bird in birds" v-bind:key="bird.c_name">
+            <br />
             <p>{{ bird.id }}: {{ bird.c_name }}</p>
           </div>
         </div>
@@ -108,6 +109,7 @@ export default {
           <h2>Location Id:</h2>
           <br />
           <div v-for="location in locations" v-bind:key="location.c_name">
+            <br />
             <p>{{ location.id }}: {{ location.state }}</p>
           </div>
         </div>
@@ -155,5 +157,8 @@ export default {
   background-color: black;
   display: flex;
   display: inline;
+}
+.column p {
+  padding: 5px;
 }
 </style>

@@ -50,7 +50,7 @@ export default {
   methods: {
     getPlaces() {
       // make axios
-      this.places = [{ lat: this.currentBird.long, lng: this.currentBird.lat, description: "The Link" }];
+      this.places = [{ lat: this.currentBird.long, lng: this.currentBird.lat, description: "GO HERE!" }];
       this.setMap();
     },
     setMap(bird) {
@@ -120,5 +120,8 @@ div .comment-box {
   border-style: inset;
   background-color: aquamarine;
   color: blueviolet;
+}
+.bird-page {
+  background-size: 150px;
 }
 </style>
