@@ -1,26 +1,17 @@
 <template>
   <body class="state-ind-bg">
     <div class="location-page">
-      <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${location.background_url})` }" v-bind:key="location.id"></div> -->
-      <!-- <p>c_name: {{ location.c_name }}</p> -->
       <img
         class="location-image"
         v-bind:src="location.location_comments"
         v-bind:alt="location.c_name"
         style="max-width: 250px"
       />
-      <!-- <p class="info-border">Scientific Name: {{ location.s_name }}</p> -->
-      <!-- <p class="info-border">Description: {{ location.state_bird }}</p> -->
-      <!-- <p>{{ location.comments[0].comment_text }}</p> -->
-      <!-- <div class="container">
-      <p v-for="location.comment in comments", v-text"comment"></p>
-    </div> -->
       <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
       <router-link class="routes" to="/locations">Back to all locations</router-link>
       <div class="comment-box-state" v-for="comment in location.comments" v-bind:key="comment.id">
         <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
         <p>{{ comment.comment_text }}</p>
-        <!-- <p>{{ location.c_name }} | State ID: {{ comment.location_id }}</p> -->
         <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
         <div>
           <button v-on:click="setMap(comment)">Fly</button>
@@ -43,6 +34,7 @@
 </template>
 
 <script>
+/* global mapboxgl */
 import axios from "axios";
 export default {
   data: function () {
@@ -63,17 +55,28 @@ export default {
       console.log(this.location);
     });
   },
-  // console.log(index(0));
-  // function (comments_i) {
-  //   while (comments_i < location.comments.length){
-  //     return comments_i;
-  //   }
-  // }
-  // console.log(0);
   methods: {
+    getPlaces() {
+      // make axios
+      this.places = [{ lat: this.currentBird.long, lng: this.currentBird.lat, description: "The Link" }];
+      this.setMap();
+    },
     setMap(location) {
       this.currentLocation = location;
       document.querySelector("#map").showModal();
+      mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
+        center: [this.currentLocation.long, this.currentLocation.lat], // starting position [lng, lat]
+        zoom: 19, // starting zoom
+      });
+      this.places.forEach((place) => {
+        // create the popup
+        const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
+        console.log(map, marker);
+      });
     },
     // destroylocation() {
     //   axios.delete(`/locations/${this.location.id}`).then((response) => {

@@ -30,10 +30,10 @@
           <li class="nav-item">
             <a class="nav-link" href="/locations">Search by State</a>
           </li>
-          <li class="nav-item">
+          <li v-if="isLoggedIn" class="nav-item">
             <a class="nav-link" href="/comments">Share YO Local Spot!</a>
           </li>
-          <li class="nav-item">
+          <li v-if="isLoggedIn" class="nav-item">
             <a class="nav-link" href="/requests">Request New Bird</a>
           </li>
         </ul>
@@ -125,6 +125,13 @@ nav a.router-link-exact-active {
   min-height: 100%;
   min-width: 100%;
   color: goldenrod;
+}
+.request-bg {
+  background: url("https://www.enmu.edu/images/about/news-and-events/enmu-news/academic-news/legendary-bird-pokemon.jpg")
+    no-repeat center center fixed;
+  min-height: 100%;
+  min-width: 100%;
+  background-size: 1500px;
 }
 
 footer {

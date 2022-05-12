@@ -35,8 +35,8 @@ export default {
 </script>
 
 <template>
-  <body class="Request-bg">
-    <div class="add-Request">
+  <body class="request-bg">
+    <div class="add-request">
       <form v-on:submit.prevent="submit()">
         <h1>Request Bird</h1>
         <ul>
@@ -54,6 +54,7 @@ export default {
           <h2>Requested Birds</h2>
           <br />
           <div v-for="request in requests" v-bind:key="request.id">
+            <br />
             <p>{{ request.id }}: {{ request.new_bird }}</p>
           </div>
         </div>
@@ -61,3 +62,14 @@ export default {
     </div>
   </body>
 </template>
+<style>
+.birds_requested p {
+  border: black;
+  border-radius: 5px;
+  color: darkviolet;
+  background-color: lightgreen;
+  display: flex;
+  display: inline;
+  padding: 3px;
+}
+</style>
