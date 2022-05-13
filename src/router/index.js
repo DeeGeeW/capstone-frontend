@@ -9,6 +9,7 @@ import StateView from "../views/StateView.vue";
 import StateIndView from "../views/StateIndView.vue";
 import NewComment from "../views/NewComment.vue";
 import RequestView from "../views/RequestView.vue";
+import MigrationView from "../views/MigrationView.vue";
 // import BirdIndex from "../views/BirdIndex.vue";
 
 const routes = [
@@ -52,6 +53,11 @@ const routes = [
     path: "/requests",
     name: "new-request",
     component: RequestView,
+  },
+  {
+    path: "/migs",
+    name: "migration",
+    component: MigrationView,
   },
   // {
   //   path: "/signup",
