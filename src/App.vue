@@ -36,6 +36,9 @@
           <li v-if="isLoggedIn" class="nav-item">
             <a class="nav-link" href="/requests">Request New Bird</a>
           </li>
+          <li v-if="isLoggedIn" class="nav-item">
+            <a class="nav-link" href="/migs">Recent Observations</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -132,6 +135,14 @@ nav a.router-link-exact-active {
   min-height: 100%;
   min-width: 100%;
   background-size: 1500px;
+}
+.migs-bg {
+  background: url("https://wallpx.com/image/2021/05/anime-boy-sky-birds-freedom-clouds-scenic-sunset.jpg") no-repeat
+    center center fixed;
+  min-height: 100%;
+  min-width: 100%;
+  padding-bottom: 800px;
+  background-size: 1800px;
 }
 
 footer {

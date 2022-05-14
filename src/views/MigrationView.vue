@@ -5,6 +5,7 @@ export default {
   data: function () {
     return {
       migrations: [],
+      searchText: "",
     };
   },
   created: function () {
@@ -17,6 +18,13 @@ export default {
         this.migrations = response.data;
       });
     },
+    filterMigrations() {
+      return this.migrations.filter((migration) => {
+        var lowercaseTitle = migration.comName.toLowerCase();
+        var lowercaseSearchText = this.searchText.toLowerCase();
+        return lowercaseTitle.includes(lowercaseSearchText);
+      });
+    },
   },
 };
 </script>
@@ -24,9 +32,23 @@ export default {
   <body class="migs-bg">
     <div>
       <!-- <div v-if="migrations.locationPrivate === false" class="index-migs"> -->
-      <h1>This months migrations in Tennessee</h1>
-      <div v-for="migration in migrations" v-bind:key="migration.id">
-        <div class="mig-box row" v-if="migration.locationPrivate === false && migration.obsValid === true">
+      <h1>This Months Migrations</h1>
+      <div class="d - flex">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search ANY Bird!"
+          aria-label="Search ANY Bird!"
+          v-model="searchText"
+          style="width: 400px"
+        />
+        <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchmigrations()">Search</button> -->
+      </div>
+      <div v-for="migration in filterMigrations()" v-bind:key="migration.id">
+        <div
+          class="mig-box row"
+          v-if="searchText && migration.locationPrivate === false && migration.obsValid === true"
+        >
           <br />
           <div class="column">
             <p>Longitude: {{ migration.lng }}</p>
