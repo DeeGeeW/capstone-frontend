@@ -105,6 +105,7 @@ export default {
 <style>
 .mig-box {
   border: inset;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
   margin: 10px;
   /* padding: 10px; */
   background-image: url("https://jooinn.com/images1280_/birds-over-train-tracks.jpg");

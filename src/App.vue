@@ -140,10 +140,7 @@
             <!-- <p>Some text..</p> -->
           </div>
           <div class="column">
-            <a
-              href="https://img.ifunny.co/images/298fca140af9f7912c1d8ee179c4eb151a9189f1bdd2926c71d8b1be135b5db3_1.webp"
-              target="_blank"
-            >
+            <a href="https://www.youtube.com/watch?v=gDAsuVxALAM" target="_blank">
               <img
                 src="https://cdn.pixabay.com/photo/2020/08/12/17/42/question-mark-5483259_960_720.jpg"
                 alt=""
@@ -151,7 +148,6 @@
                 height="100"
               />
             </a>
-            <!-- <p>Some text..</p> -->
           </div>
         </div>
       </div>
@@ -237,7 +233,8 @@ nav a.router-link-exact-active {
     no-repeat center center fixed;
   min-height: 100%;
   min-width: 100%;
-  background-size: 1500px;
+  padding-bottom: 400px;
+  background-size: 1400px;
 }
 .migs-bg {
   background: url("https://wallpx.com/image/2021/05/anime-boy-sky-birds-freedom-clouds-scenic-sunset.jpg") no-repeat
@@ -270,6 +267,10 @@ footer {
   /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
   color: black;
   font-family: "Sriracha", cursive;
+}
+footer .img {
+  border: inset;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
 }
 /* footer .row outer {
   grid-template-columns: repeat(3, minmax(0, 1fr));

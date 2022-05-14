@@ -4,7 +4,7 @@
       <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }" v-bind:key="bird.id"></div> -->
       <h1 class="info-border">{{ bird.c_name }}</h1>
       <img class="bird-image" v-bind:src="bird.image_url" v-bind:alt="bird.c_name" style="max-width: 250px" />
-      <p class="info-border">Scientific Name: {{ bird.s_name }}</p>
+      <p class="info-border">Bird Id: {{ bird.id }} | Scientific Name: {{ bird.s_name }}</p>
       <p class="info-border">Description: {{ bird.description }}</p>
       <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
       <router-link class="routes" to="/" style="margin-right: 10px">Back to all birds</router-link>

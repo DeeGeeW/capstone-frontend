@@ -123,9 +123,6 @@ export default {
   text-align: left;
   padding: 30px;
   font-family: "Tapestry", cursive;
-  /* background-image: url("https://wallpx.com/image/2020/11/lights-scenic-particles-anime-landscape-polychromatic.jpg");
-  background-repeat: no-repeat;
-  background-size: auto; */
 }
 .add-comment p {
   border: inset;
