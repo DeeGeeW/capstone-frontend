@@ -53,3 +53,22 @@ export default {
     </div>
   </body>
 </template>
+
+<style>
+.signup {
+  /* background-color: antiquewhite; */
+  /* border: inset; */
+  text-align: left;
+  margin-left: 30px;
+}
+.signup label {
+  background-color: aliceblue;
+}
+.signup h1 {
+  color: indianred;
+  background-color: beige;
+  display: inline;
+  padding: 5px;
+  border-radius: 10px;
+}
+</style>

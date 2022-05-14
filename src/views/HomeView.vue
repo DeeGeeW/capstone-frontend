@@ -86,6 +86,7 @@ export default {
 .home-bg .selected .card-body {
   color: black;
   background-color: gold;
+  cursor: url("http://www.rw-designer.com/cursor-view/165728.png"), auto;
 }
 .home-bg .card-body {
   background-color: rgb(54, 53, 53);

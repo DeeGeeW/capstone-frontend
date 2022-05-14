@@ -45,7 +45,7 @@ export default {
 <template>
   <body class="comment-bg">
     <div class="add-comment">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:submit="submit()">
         <h1>Add Comment</h1>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>

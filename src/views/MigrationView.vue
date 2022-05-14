@@ -6,6 +6,10 @@ export default {
     return {
       migrations: [],
       searchText: "",
+      migCmment: [],
+      places: [],
+      currentMig: [],
+      mig: [],
     };
   },
   created: function () {
@@ -25,6 +29,29 @@ export default {
         return lowercaseTitle.includes(lowercaseSearchText);
       });
     },
+    // getPlaces() {
+    //   // make axios
+    //   this.places = [{ lat: this.currentMig.long, lng: this.currentMig.lat, description: "GO HERE!" }];
+    //   this.setMap();
+    // },
+    // setMap(migration) {
+    //   this.currentMig = migration;
+    //   console.log(this.currentMig.lng);
+    //   document.querySelector("#map").showModal();
+    //   mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
+    //   const map = new mapboxgl.Map({
+    //     container: "map", // container ID
+    //     style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
+    //     center: [this.currentMig.lng, this.currentMig.lat], // starting position
+    //     zoom: 19, // starting zoom
+    //   });
+    //   this.places.forEach((place) => {
+    //     // create the popup
+    //     const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+    //     const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
+    //     console.log(map, marker);
+    //   });
+    // },
   },
 };
 </script>
@@ -51,20 +78,26 @@ export default {
         >
           <br />
           <div class="column">
-            <p>Longitude: {{ migration.lng }}</p>
-            <p>Lattitude: {{ migration.lat }}</p>
+            <h4>Longitude: {{ migration.lng }}</h4>
+            <h4>Lattitude: {{ migration.lat }}</h4>
           </div>
           <div class="column">
-            <p>Observation Validated: {{ migration.obsValid }}</p>
-            <p>Private Property: {{ migration.locationPrivate }}</p>
+            <h4>Observation Validated: {{ migration.obsValid }}</h4>
+            <h4>Private Property: {{ migration.locationPrivate }}</h4>
+            <!-- <div>
+              <button v-on:click="setMap(comment)">Fly</button>
+            </div> -->
           </div>
           <div class="column">
-            <button>hi</button>
-            <h2>Common Name: {{ migration.comName }}</h2>
-            <p>Location Address: {{ migration.locName }}</p>
+            <h2>{{ migration.comName }}</h2>
+            <br />
+            <h3>Location Address: {{ migration.locName }}</h3>
           </div>
         </div>
       </div>
+      <!-- <dialog id="map">
+        <form method="modal"></form>
+      </dialog> -->
     </div>
   </body>
 </template>
@@ -74,10 +107,28 @@ export default {
   border: inset;
   margin: 10px;
   /* padding: 10px; */
-  background-color: aquamarine;
+  background-image: url("https://jooinn.com/images1280_/birds-over-train-tracks.jpg");
 }
 .mig-box .column {
   float: left;
   width: 33.33%;
+}
+.mig-box h2 {
+  border: inset;
+  border-radius: 10px;
+  background-color: black;
+  display: inline;
+  color: lavenderblush;
+  margin: 5px;
+}
+.mig-box h3 {
+  border: inset;
+  border-radius: 10px;
+  background-color: black;
+  display: inline;
+  color: lightcyan;
+}
+.mig-box h4 {
+  color: lightcyan;
 }
 </style>

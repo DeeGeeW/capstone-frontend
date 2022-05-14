@@ -53,8 +53,110 @@
     <router-link to="/login">Login</router-link>
   </nav> -->
   <router-view />
-  <footer style="height: auto; background-color: #f7c201">
-    <h1>L.L.K. ent.</h1>
+  <footer style="width: auto; background-color: #f7c201">
+    <div class="row">
+      <div class="column">
+        <div class="row">
+          <div class="column">
+            <a href="https://ebird.org/home" target="_blank">
+              <img
+                src="https://s3.amazonaws.com/is-ebird-wordpress-prod-s3/wp-content/uploads/sites/55/logo-ebird-1200-490x276.png"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+          <div class="column">
+            <a href="https://www.audubon.org/" target="_blank">
+              <img
+                src="https://www.developmentguild.com/assets/national-audubon-society-logo-e1569340135306.png"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <a href="https://www.birdorable.com/" target="_blank">
+              <img src="https://www.birdorable.com/img/sections/f/884.jpg" alt="" width="200" height="100" />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+          <div class="column">
+            <a href="https://www.birds.cornell.edu/home/" target="_blank">
+              <img
+                src="https://cdn.shopify.com/s/files/1/0255/3751/1523/products/CL_logo_stack_CMYK_1024x1024@2x.jpg?v=1580154653"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="row">
+          <div class="column">
+            <a href="https://binocularsumo.com/reviews/under-100/" target="_blank">
+              <img
+                src="https://www.tripsavvy.com/thmb/GmdaianILgr0SkMZhzuIjpsZP2I=/640x0/filters:no_upscale():max_bytes(150000):strip_icc():gifv():format(webp)/TRIPSAVVY-13-best-binoculars-4061459-primary-2c2f4efe9e3b4e32b406d8c6291c53f3.jpg"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+          <div class="column">
+            <a href="https://www.youtube.com/watch?v=xzuwSGE_HTU" target="_blank">
+              <img
+                src="https://kitchentablemagicdotorg.files.wordpress.com/2017/10/dev-sbmtg1.jpg?w=676&h=380"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <a href="https://www.findlatitudeandlongitude.com/" target="_blank">
+              <img
+                src="https://www.thoughtco.com/thmb/a4fMjfbRVOQ2f5NsG6k-qEPAfPY=/768x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/map-58b9d2665f9b58af5ca8b718-5b859fcc46e0fb0050f10865.jpg"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+          <div class="column">
+            <a
+              href="https://img.ifunny.co/images/298fca140af9f7912c1d8ee179c4eb151a9189f1bdd2926c71d8b1be135b5db3_1.webp"
+              target="_blank"
+            >
+              <img
+                src="https://cdn.pixabay.com/photo/2020/08/12/17/42/question-mark-5483259_960_720.jpg"
+                alt=""
+                width="200"
+                height="100"
+              />
+            </a>
+            <!-- <p>Some text..</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="column"><h1>L.L.K. ent.</h1></div>
+    </div>
   </footer>
 </template>
 <script>
@@ -107,6 +209,7 @@ nav a.router-link-exact-active {
   min-width: 100%;
   color: goldenrod;
   padding-bottom: 800px;
+  cursor: url("http://www.rw-designer.com/icon-image/12294-24x24x8.png"), auto;
 }
 .home-bg h1 {
   border-style: inset;
@@ -144,10 +247,34 @@ nav a.router-link-exact-active {
   padding-bottom: 800px;
   background-size: 1800px;
 }
+.login-bg {
+  background: url("https://wallpapersmug.com/u/6d187b/birds-anime-boy-outdoor.jpg") no-repeat center center fixed;
+  min-height: 100%;
+  min-width: 100%;
+  padding-bottom: 800px;
+}
+.signup-bg {
+  background: url("https://www.wallpaperbetter.com/wallpaper/560/224/960/bird-clouds-person-720P-wallpaper.jpg")
+    no-repeat center center fixed;
+  min-height: 100%;
+  min-width: 100%;
+  padding-bottom: 600px;
+  background-size: 2100px;
+}
+.bird-page {
+  padding-bottom: 800px;
+}
 
 footer {
-  padding: 60px;
+  /* padding: 6px; */
+  /* grid-template-columns: repeat(3, minmax(0, 1fr)); */
   color: black;
   font-family: "Sriracha", cursive;
 }
+/* footer .row outer {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+} */
+/* footer .row {
+  
+} */
 </style>

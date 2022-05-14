@@ -95,7 +95,8 @@ export default {
   background-image: url(location.background_url);
 } */
 .location-page {
-  background-image: url("https://img.freepik.com/free-vector/log-bridge-mountains-cliff-rock-peaks-landscape-with-waterfall-trees-background-beautiful-scenery-nature-view-beam-bridgework-connect-rocky-edges-cartoon-vector-illustration_107791-4568.jpg?t=st=1652148562~exp=1652149162~hmac=e9cc89e6f296085584341a989515f567bd6665ba55fe868321c8dd35a977bf10&w=1380");
+  background-image: url("https://cdn.suwalls.com/wallpapers/anime/anime-city-28573-1920x1080.jpg");
+  padding-bottom: 440px;
 }
 .location-page img {
   margin: 50px;
@@ -104,6 +105,7 @@ export default {
   border-style: inset;
   color: gold;
   background-color: black;
+  margin: 20px;
 }
 
 .info-border-state {
