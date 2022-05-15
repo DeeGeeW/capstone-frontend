@@ -111,8 +111,8 @@ export default {
   background-image: url("https://jooinn.com/images1280_/birds-over-train-tracks.jpg");
 }
 .mig-box .column {
-  float: left;
-  width: 33.33%;
+  flex: 50%;
+  padding: 10px;
 }
 .mig-box h2 {
   border: inset;

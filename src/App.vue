@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">ACTUAL-BURDZ</a>
+      <a class="navbar-brand" href="/">ACTUAL-BURDZ</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -101,6 +101,7 @@
           </div>
         </div>
       </div>
+      <div class="column"><h1>L.L.K.</h1></div>
       <div class="column">
         <div class="row">
           <div class="column">
@@ -151,7 +152,7 @@
           </div>
         </div>
       </div>
-      <div class="column"><h1>L.L.K. ent.</h1></div>
+      <!-- <div class="column"><h1>L.L.K. ent.</h1></div> -->
     </div>
   </footer>
 </template>
@@ -268,9 +269,19 @@ footer {
   color: black;
   font-family: "Sriracha", cursive;
 }
+footer .column {
+  flex: 33%;
+  padding: 3px;
+}
 footer .img {
   border: inset;
   border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+}
+footer h1 {
+  align-items: center;
+  justify-content: center;
+  font-size: 100px;
+  margin-top: 20px;
 }
 /* footer .row outer {
   grid-template-columns: repeat(3, minmax(0, 1fr));

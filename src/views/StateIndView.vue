@@ -49,7 +49,7 @@ export default {
   mounted: function () {
     console.log(this.$route.params.id);
     axios.get(`/locations/${this.$route.params.id}`).then((response) => {
-      console.log("teste");
+      // console.log("teste");
       this.location = response.data;
       this.comments = this.location.comments;
       console.log(this.comment);

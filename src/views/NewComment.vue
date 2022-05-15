@@ -144,7 +144,7 @@ export default {
 }
 
 /* Create two equal columns that sits next to each other */
-.column {
+.comment-bg .column {
   flex: 50%;
   padding: 10px;
 }
@@ -155,7 +155,7 @@ export default {
   display: flex;
   display: inline;
 }
-.column p {
+.comment-bg .column p {
   padding: 5px;
 }
 </style>

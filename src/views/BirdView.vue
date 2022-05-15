@@ -44,6 +44,7 @@ export default {
     axios.get(`/birds/${this.$route.params.id}`).then((response) => {
       this.bird = response.data;
       this.comments = this.bird.comments;
+      console.log(this.comments);
       console.log(this.bird);
     });
   },
@@ -122,6 +123,6 @@ div .comment-box {
   color: blueviolet;
 }
 .bird-page {
-  background-size: 150px;
+  background-size: 300px;
 }
 </style>
