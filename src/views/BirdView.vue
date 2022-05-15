@@ -9,12 +9,21 @@
       <router-link class="routes" to="/comments">SHARE SPOT!!</router-link>
       <router-link class="routes" to="/" style="margin-right: 10px">Back to all birds</router-link>
       <div class="comment-box" v-for="comment in comments" v-bind:key="comment.id">
-        <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
-        <h3>{{ comment.comment_text }}</h3>
-        <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
-        <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
-        <div>
-          <button v-on:click="setMap(comment)">Fly</button>
+        <div class="row">
+          <div class="column">
+            <h3>{{ comment.comment_text }}</h3>
+          </div>
+          <div class="column">
+            <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
+            <br />
+            <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
+          </div>
+          <div class="column">
+            <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
+            <div>
+              <button v-on:click="setMap(comment)">Fly</button>
+            </div>
+          </div>
         </div>
       </div>
       <dialog id="map">
@@ -65,10 +74,14 @@ export default {
         // center: [this.currentBird.long, this.currentBird.lat],
         zoom: 19, // starting zoom
       });
-      this.places.forEach((place) => {
+      this.places.forEach(() => {
+        // this.currentBird = bird;
         // create the popup
-        const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
-        const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
+        // const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        const marker = new mapboxgl.Marker(bird)
+          .setLngLat([this.currentBird.long, this.currentBird.lat])
+          // .setPopup(popup)
+          .addTo(map);
         console.log(map, marker);
       });
     },
@@ -124,5 +137,10 @@ div .comment-box {
 }
 .bird-page {
   background-size: 300px;
+}
+.comment-box .column {
+  flex: 33%;
+  padding: 10px;
+  margin: 10 px;
 }
 </style>

@@ -15,6 +15,9 @@ export default {
     this.indexLocations();
   },
   methods: {
+    setModal() {
+      document.querySelector("#warning").showModal();
+    },
     submit: function () {
       axios
         .post("/comments", this.newCommentParams)
@@ -45,6 +48,7 @@ export default {
 <template>
   <body class="comment-bg">
     <div class="add-comment">
+      <button v-on:click="setModal()">Read Me!!</button>
       <form v-on:submit="submit()">
         <h1>Add Comment</h1>
         <ul>
@@ -115,6 +119,34 @@ export default {
         </div>
       </div>
     </div>
+    <dialog id="warning">
+      <form class="warning-md" method="modal">
+        <h1>Warning!</h1>
+        <br />
+        <p>This is a local spot comment page.</p>
+        <br />
+        <p>
+          What this means is you are sharing a PUBLIC specific spot that you personally want to share with fellow
+          adventurers.
+        </p>
+        <br />
+        <p>
+          As much as it would be great to reply to other Actual-Birders comments. This will result in your comment being
+          removed. Our policy is that this is unsafe. Sorry Not Sorry.
+        </p>
+        <br />
+        <p>Do NOT add any coordinates for any private property. These will be removed imediately!</p>
+        <br />
+        <p>
+          Remeber familys and loved ones may use these spots. Any unsafe places(i.e. glass, beer cans, a million
+          cigarette butts, ect. are deemed not safe.
+        </p>
+        <br />
+        <p>Please dont add anything unsafe!</p>
+        <br />
+        <button>close</button>
+      </form>
+    </dialog>
   </body>
 </template>
 
@@ -157,5 +189,25 @@ export default {
 }
 .comment-bg .column p {
   padding: 5px;
+}
+.warning-md {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("https://freedesignfile.com/upload/2012/08/cb-11.jpg");
+}
+.warning-md p {
+  background-color: yellow;
+  display: inline;
+  margin: 20px;
+}
+.warning-md h1 {
+  border: inset;
+  color: red;
+  background-color: black;
+}
+.warning-md button {
+  margin: 30px;
 }
 </style>
