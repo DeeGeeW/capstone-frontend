@@ -103,8 +103,10 @@ export default {
 }
 .comment-box-state {
   border-style: inset;
+  border-image: linear-gradient(45deg, orange, red) 1;
   color: gold;
   background-color: black;
+  border-radius: 10px;
   margin: 20px;
 }
 

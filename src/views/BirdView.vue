@@ -97,13 +97,16 @@ div .comment-box {
   margin: 8px;
 }
 .comment-box h3 {
-  border-style: inset;
+  border: inset;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
   color: gold;
   background-color: black;
   border-radius: 10px;
+  margin: 10px;
 }
 .comment-box p {
   border-style: inset;
+  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
   color: gold;
   background-color: black;
   border-radius: 10px;

@@ -283,6 +283,10 @@ footer h1 {
   font-size: 100px;
   margin-top: 20px;
 }
+button {
+  background-color: lavender;
+  border-radius: 20px;
+}
 /* footer .row outer {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 } */

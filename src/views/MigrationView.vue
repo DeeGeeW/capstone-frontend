@@ -84,6 +84,7 @@ export default {
           <div class="column">
             <h4>Observation Validated: {{ migration.obsValid }}</h4>
             <h4>Private Property: {{ migration.locationPrivate }}</h4>
+            <h4>Date & Time Observed: {{ migration.obsDt }}</h4>
             <!-- <div>
               <button v-on:click="setMap(comment)">Fly</button>
             </div> -->
@@ -105,7 +106,7 @@ export default {
 <style>
 .mig-box {
   border: inset;
-  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  border-image: linear-gradient(45deg, turquoise, silver) 1;
   margin: 10px;
   /* padding: 10px; */
   background-image: url("https://jooinn.com/images1280_/birds-over-train-tracks.jpg");

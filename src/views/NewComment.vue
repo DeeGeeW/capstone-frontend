@@ -48,8 +48,8 @@ export default {
 <template>
   <body class="comment-bg">
     <div class="add-comment">
-      <button v-on:click="setModal()">Read Me!!</button>
-      <form v-on:submit="submit()">
+      <button class="button-img" v-on:click="setModal()">Read Me!!</button>
+      <form class="submit-img" v-on:submit="submit()">
         <h1>Add Comment</h1>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
@@ -138,8 +138,8 @@ export default {
         <p>Do NOT add any coordinates for any private property. These will be removed imediately!</p>
         <br />
         <p>
-          Remeber familys and loved ones may use these spots. Any unsafe places(i.e. glass, beer cans, a million
-          cigarette butts, ect. are deemed not safe.
+          Remeber familys and loved ones may use these spots. Any unsafe places, i.e. glass, beer cans, a million
+          cigarette butts, ect. These are deemed not safe.
         </p>
         <br />
         <p>Please dont add anything unsafe!</p>
@@ -209,5 +209,9 @@ export default {
 }
 .warning-md button {
   margin: 30px;
+  background-color: aquamarine;
 }
+/* button {
+  background-image: url("https://www.nicepng.com/png/full/10-104563_login-button-png-button-png.png");
+} */
 </style>
