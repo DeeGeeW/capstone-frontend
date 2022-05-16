@@ -6,6 +6,7 @@ export default {
     return {
       newSessionParams: {},
       errors: [],
+      isMod: "",
     };
   },
   methods: {
@@ -16,6 +17,8 @@ export default {
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
           this.$router.push("/");
+          console.log(this.newSessionParams);
+          this.isMod = this.newSessionParams.is_mod;
         })
         .catch((error) => {
           console.log(error.response);

@@ -7,10 +7,22 @@ export default {
       newRequestParams: {},
       errors: [],
       requests: [],
+      request: [],
+      id: [],
     };
   },
   created: function () {
     this.indexRequests();
+    console.log(this.newSessionParams);
+  },
+  mounted: function () {
+    console.log(this.$route.params.id);
+    axios.get(`/requests/${this.$route.params.id}`).then((response) => {
+      this.request = response.data;
+      // this.id = this.request.id;
+      // console.log(this.id);
+      console.log(this.request);
+    });
   },
   methods: {
     submit: function () {
@@ -28,6 +40,13 @@ export default {
       axios.get("/requests").then((response) => {
         console.log(response.data);
         this.requests = response.data;
+      });
+    },
+    destroyRequest: function (request) {
+      axios.delete("/requests/" + request.id).then((response) => {
+        console.log("requests destroy", response);
+        // var index = this.requests.indexOf(request);
+        // this.products.splice(index, 1);
       });
     },
   },
@@ -56,6 +75,9 @@ export default {
           <div v-for="request in requests" v-bind:key="request.id">
             <br />
             <p>{{ request.id }}: {{ request.new_bird }}</p>
+            <div>
+              <button v-on:click="destroyRequest(request)">Destroy request</button>
+            </div>
           </div>
         </div>
       </div>

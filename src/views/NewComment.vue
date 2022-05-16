@@ -15,6 +15,9 @@ export default {
     this.indexLocations();
   },
   methods: {
+    // showModal() {
+    //   document.querySelector("#warning").modal("show");
+    // },
     setModal() {
       document.querySelector("#warning").showModal();
     },
@@ -126,7 +129,7 @@ export default {
         <p>This is a local spot comment page.</p>
         <br />
         <p>
-          What this means is you are sharing a PUBLIC specific spot that you personally want to share with fellow
+          What this means is you are providing a PUBLIC specific spot that you personally want to share with fellow
           adventurers.
         </p>
         <br />
@@ -200,7 +203,9 @@ export default {
 .warning-md p {
   background-color: yellow;
   display: inline;
-  margin: 20px;
+  /* margin: 60px; */
+  padding: 3px;
+  border-radius: 20px;
 }
 .warning-md h1 {
   border: inset;
@@ -208,7 +213,7 @@ export default {
   background-color: black;
 }
 .warning-md button {
-  margin: 30px;
+  margin: 50px;
   background-color: aquamarine;
 }
 /* button {

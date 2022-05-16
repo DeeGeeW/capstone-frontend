@@ -1,4 +1,5 @@
 <script>
+/* global mapboxgl */
 import axios from "axios";
 
 export default {
@@ -8,7 +9,7 @@ export default {
       searchText: "",
       migCmment: [],
       places: [],
-      currentMig: [],
+      currentMig: {},
       mig: [],
     };
   },
@@ -22,6 +23,9 @@ export default {
         this.migrations = response.data;
       });
     },
+    // migrationsShow: function () {
+    //   axios.get("/migs/")
+    // }
     filterMigrations() {
       return this.migrations.filter((migration) => {
         var lowercaseTitle = migration.comName.toLowerCase();
@@ -29,29 +33,29 @@ export default {
         return lowercaseTitle.includes(lowercaseSearchText);
       });
     },
-    // getPlaces() {
-    //   // make axios
-    //   this.places = [{ lat: this.currentMig.long, lng: this.currentMig.lat, description: "GO HERE!" }];
-    //   this.setMap();
-    // },
-    // setMap(migration) {
-    //   this.currentMig = migration;
-    //   console.log(this.currentMig.lng);
-    //   document.querySelector("#map").showModal();
-    //   mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
-    //   const map = new mapboxgl.Map({
-    //     container: "map", // container ID
-    //     style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
-    //     center: [this.currentMig.lng, this.currentMig.lat], // starting position
-    //     zoom: 19, // starting zoom
-    //   });
-    //   this.places.forEach((place) => {
-    //     // create the popup
-    //     const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
-    //     const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
-    //     console.log(map, marker);
-    //   });
-    // },
+    getPlaces() {
+      // make axios
+      this.places = [{ lat: this.currentMig.long, lng: this.currentMig.lat, description: "GO HERE!" }];
+      this.setMap();
+    },
+    setMap() {
+      console.log(this.$route.params.id);
+      console.log(this.lng);
+      document.querySelector("#map").showModal();
+      mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
+        center: [this.lng, this.currentMig.lat], // starting position
+        zoom: 19, // starting zoom
+      });
+      this.places.forEach((place) => {
+        // create the popup
+        const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
+        console.log(map, marker);
+      });
+    },
   },
 };
 </script>
@@ -86,7 +90,7 @@ export default {
             <h4>Private Property: {{ migration.locationPrivate }}</h4>
             <h4>Date & Time Observed: {{ migration.obsDt }}</h4>
             <!-- <div>
-              <button v-on:click="setMap(comment)">Fly</button>
+              <button v-on:click="setMap(this.migration)">Fly</button>
             </div> -->
           </div>
           <div class="column">

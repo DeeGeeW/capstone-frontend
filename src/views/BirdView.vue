@@ -98,7 +98,7 @@ div .comment-box {
 }
 .comment-box h3 {
   border: inset;
-  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  border-image: linear-gradient(45deg, turquoise, blueviolet) 1;
   color: gold;
   background-color: black;
   border-radius: 10px;
@@ -106,10 +106,11 @@ div .comment-box {
 }
 .comment-box p {
   border-style: inset;
-  border-image: linear-gradient(45deg, turquoise, greenyellow) 1;
+  border-image: linear-gradient(45deg, turquoise, blueviolet) 1;
   color: gold;
   background-color: black;
   border-radius: 10px;
+  padding: 8px;
   display: inline-block;
 }
 .test {
