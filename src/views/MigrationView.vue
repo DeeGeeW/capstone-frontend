@@ -10,7 +10,7 @@ export default {
       migCmment: [],
       places: [],
       currentMig: {},
-      mig: [],
+      mig: {},
     };
   },
   created: function () {
@@ -38,15 +38,17 @@ export default {
       this.places = [{ lat: this.currentMig.long, lng: this.currentMig.lat, description: "GO HERE!" }];
       this.setMap();
     },
-    setMap() {
-      console.log(this.$route.params.id);
-      console.log(this.lng);
+    setMap(migration) {
+      this.currentMig = migration;
+      console.log(this.currentMig);
+      console.log(this.currentMig.lng);
+      console.log(this.currentMig.lat);
       document.querySelector("#map").showModal();
       mapboxgl.accessToken = process.env.VUE_APP_MAP_API_KEY;
       const map = new mapboxgl.Map({
         container: "map", // container ID
         style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
-        center: [this.lng, this.currentMig.lat], // starting position
+        center: [this.currentMig.lng, this.currentMig.lat], // starting position
         zoom: 19, // starting zoom
       });
       this.places.forEach((place) => {
@@ -89,9 +91,9 @@ export default {
             <h4>Observation Validated: {{ migration.obsValid }}</h4>
             <h4>Private Property: {{ migration.locationPrivate }}</h4>
             <h4>Date & Time Observed: {{ migration.obsDt }}</h4>
-            <!-- <div>
-              <button v-on:click="setMap(this.migration)">Fly</button>
-            </div> -->
+            <div>
+              <button v-on:click="setMap(migration)">Fly</button>
+            </div>
           </div>
           <div class="column">
             <h2>{{ migration.comName }}</h2>
@@ -100,9 +102,9 @@ export default {
           </div>
         </div>
       </div>
-      <!-- <dialog id="map">
+      <dialog id="map">
         <form method="modal"></form>
-      </dialog> -->
+      </dialog>
     </div>
   </body>
 </template>
