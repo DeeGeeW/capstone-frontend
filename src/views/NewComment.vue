@@ -15,9 +15,6 @@ export default {
     this.indexLocations();
   },
   methods: {
-    // showModal() {
-    //   document.querySelector("#warning").modal("show");
-    // },
     setModal() {
       document.querySelector("#warning").showModal();
     },
@@ -100,7 +97,7 @@ export default {
           <input type="int" style="width: 30px" v-model="newCommentParams.location_id" />
         </div>
         <br />
-        <input type="submit" value="Submit" />
+        <input class="sub-butt" type="submit" value="Submit" />
       </form>
       <br />
       <div class="row">
@@ -141,8 +138,8 @@ export default {
         <p>Do NOT add any coordinates for any private property. These will be removed imediately!</p>
         <br />
         <p>
-          Remeber familys and loved ones may use these spots. Any unsafe places, i.e. glass, beer cans, a million
-          cigarette butts, ect. These are deemed not safe.
+          Remebe, familys and loved ones may use these spots. Any unsafe places, i.e. glass, lava, a million cigarette
+          butts, ect. These are deemed not safe.
         </p>
         <br />
         <p>Please dont add anything unsafe!</p>
@@ -216,6 +213,10 @@ export default {
   margin: 50px;
   background-color: aquamarine;
 }
+/* .input .sub-butt {
+  background-color: rgb(105, 143, 105);
+  border-radius: 20px;
+} */
 /* button {
   background-image: url("https://www.nicepng.com/png/full/10-104563_login-button-png-button-png.png");
 } */

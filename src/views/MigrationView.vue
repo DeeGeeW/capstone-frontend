@@ -33,9 +33,10 @@ export default {
         return lowercaseTitle.includes(lowercaseSearchText);
       });
     },
-    getPlaces() {
+    getPlaces(migration) {
       // make axios
-      this.places = [{ lat: this.currentMig.long, lng: this.currentMig.lat, description: "GO HERE!" }];
+      this.currentMig = migration;
+      this.places = [{ lat: this.currentMig.lng, lng: this.currentMig.lat }];
       this.setMap();
     },
     setMap(migration) {
@@ -53,7 +54,7 @@ export default {
       });
       this.places.forEach((place) => {
         // create the popup
-        const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
+        const popup = new mapboxgl.Popup({ offset: 25 });
         const marker = new mapboxgl.Marker().setLngLat([place.lng, place.lat]).setPopup(popup).addTo(map);
         console.log(map, marker);
       });
