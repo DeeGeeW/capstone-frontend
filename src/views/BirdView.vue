@@ -17,6 +17,9 @@
             <p>User ID: {{ comment.user_id }} | Comment ID: {{ comment.id }}</p>
             <br />
             <p>{{ bird.c_name }} | State ID: {{ comment.location_id }}</p>
+            <div>
+              <button v-on:click="destroyComment(comment)">Destroy Comment</button>
+            </div>
           </div>
           <div class="column">
             <p>Lat: {{ comment.lat }} | Long: {{ comment.long }}</p>
@@ -83,6 +86,13 @@ export default {
           // .setPopup(popup)
           .addTo(map);
         console.log(map, marker);
+      });
+    },
+    destroyComment: function (comment) {
+      axios.delete("/comments/" + comment.id).then((response) => {
+        console.log("comments destroy", response);
+        // var index = this.comments.indexOf(comment);
+        // this.products.splice(index, 1);
       });
     },
   },
