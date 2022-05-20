@@ -79,10 +79,11 @@ export default {
         <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchmigrations()">Search</button> -->
       </div>
       <div v-for="migration in filterMigrations()" v-bind:key="migration.id">
-        <div
+        <div class="mig-box row" v-if="searchText && migration.locationPrivate === false">
+          <!-- <div
           class="mig-box row"
           v-if="searchText && migration.locationPrivate === false && migration.obsValid === true"
-        >
+        > -->
           <br />
           <div class="column">
             <h4>Longitude: {{ migration.lng }}</h4>
