@@ -223,7 +223,7 @@ nav a.router-link-exact-active {
   background-color: goldenrod;
 }
 .comment-bg {
-  background: url("https://cache.desktopnexus.com/cropped-wallpapers/2370/2370548-1680x1050-[DesktopNexus.com].jpg?st=mISdrvGwb05gZ8yldIk7OQ&e=1652146372")
+  background: url("https://cache.desktopnexus.com/cropped-wallpapers/2370/2370548-1680x1050-[DesktopNexus.com].jpg?st=keY2wjKSo3-SovkTymKH7Q&e=1654621479")
     no-repeat center center fixed;
   min-height: 100%;
   min-width: 100%;
