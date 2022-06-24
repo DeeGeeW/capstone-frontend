@@ -200,7 +200,6 @@ export default {
 .warning-md p {
   background-color: yellow;
   display: inline;
-  /* margin: 60px; */
   padding: 3px;
   border-radius: 20px;
 }
@@ -213,11 +212,4 @@ export default {
   margin: 50px;
   background-color: aquamarine;
 }
-/* .input .sub-butt {
-  background-color: rgb(105, 143, 105);
-  border-radius: 20px;
-} */
-/* button {
-  background-image: url("https://www.nicepng.com/png/full/10-104563_login-button-png-button-png.png");
-} */
 </style>

@@ -23,9 +23,6 @@ export default {
         this.migrations = response.data;
       });
     },
-    // migrationsShow: function () {
-    //   axios.get("/migs/")
-    // }
     filterMigrations() {
       return this.migrations.filter((migration) => {
         var lowercaseTitle = migration.comName.toLowerCase();
@@ -34,7 +31,6 @@ export default {
       });
     },
     getPlaces(migration) {
-      // make axios
       this.currentMig = migration;
       this.places = [{ lat: this.currentMig.lng, lng: this.currentMig.lat }];
       this.setMap();

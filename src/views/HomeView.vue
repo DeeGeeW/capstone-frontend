@@ -58,7 +58,6 @@ export default {
           v-model="searchText"
           style="width: 400px"
         />
-        <!-- <button class="btn btn-outline-success" type="submit" v-on:click="searchBirds()">Search</button> -->
       </div>
       <div
         class="col"
@@ -82,7 +81,6 @@ export default {
 </template>
 
 <style>
-/* div {text} */
 .home-bg .selected .card-body {
   color: black;
   background-color: gold;
@@ -91,10 +89,6 @@ export default {
 .home-bg .card-body {
   background-color: rgb(54, 53, 53);
 }
-/* img {
-  height: 200px;
-  object-fit: cover;
-} */
 .card {
   margin: 20px;
 }

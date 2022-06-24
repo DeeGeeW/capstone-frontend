@@ -18,16 +18,8 @@
         </div>
       </div>
       <dialog id="map">
-        <form method="modal">
-          <!-- <button>LAND!</button>
-          <h1>teste!</h1>
-          <p>{{ this.currentLocation.id }}</p>
-          <p>{{ this.currentLocation.long }}</p>
-          <p>{{ this.currentLocation.lat }}</p> -->
-        </form>
+        <form method="modal"></form>
       </dialog>
-      <!-- <router-link v-bind:to="`/locations/${location.id}/edit`" style="margin-right: 10px">Edit location</router-link> -->
-      <!-- <button v-on:click="destroylocation()">Delete</button> -->
     </div>
     <!-- </div> -->
   </body>
@@ -49,7 +41,6 @@ export default {
   mounted: function () {
     console.log(this.$route.params.id);
     axios.get(`/locations/${this.$route.params.id}`).then((response) => {
-      // console.log("teste");
       this.location = response.data;
       this.comments = this.location.comments;
       console.log(this.comment);
@@ -58,7 +49,6 @@ export default {
   },
   methods: {
     getPlaces() {
-      // make axios
       this.places = [{ lat: this.currentBird.long, lng: this.currentBird.lat, description: "The Link" }];
       this.setMap();
     },
@@ -79,21 +69,11 @@ export default {
         console.log(map, marker);
       });
     },
-    // destroylocation() {
-    //   axios.delete(`/locations/${this.location.id}`).then((response) => {
-    //     console.log(response);
-    //     this.$router.push("/locations");
-    //   });
-    // },
-    // },
   },
 };
 </script>
 
 <style>
-/* div {
-  background-image: url(location.background_url);
-} */
 .location-page {
   background-image: url("https://cdn.suwalls.com/wallpapers/anime/anime-city-28573-1920x1080.jpg");
   padding-bottom: 440px;

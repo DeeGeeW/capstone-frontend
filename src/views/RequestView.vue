@@ -19,8 +19,6 @@ export default {
     console.log(this.$route.params.id);
     axios.get(`/requests/${this.$route.params.id}`).then((response) => {
       this.request = response.data;
-      // this.id = this.request.id;
-      // console.log(this.id);
       console.log(this.request);
     });
   },
@@ -45,8 +43,6 @@ export default {
     destroyRequest: function (request) {
       axios.delete("/requests/" + request.id).then((response) => {
         console.log("requests destroy", response);
-        // var index = this.requests.indexOf(request);
-        // this.products.splice(index, 1);
       });
     },
   },

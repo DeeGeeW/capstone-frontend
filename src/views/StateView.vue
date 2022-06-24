@@ -71,7 +71,6 @@ export default {
 </template>
 
 <style>
-/* div {text} */
 .state-bg .selected .card-body {
   color: goldenrod;
   background-color: rgb(54, 53, 53);

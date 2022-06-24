@@ -56,8 +56,6 @@ export default {
 
 <style>
 .signup {
-  /* background-color: antiquewhite; */
-  /* border: inset; */
   text-align: left;
   margin-left: 30px;
 }

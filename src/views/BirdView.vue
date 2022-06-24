@@ -1,7 +1,6 @@
 <template>
   <body class="bird-body">
     <div class="bird-page" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }">
-      <!-- <div class="test" v-bind:style="{ backgroundImage: `url(${bird.background_url})` }" v-bind:key="bird.id"></div> -->
       <h1 class="info-border">{{ bird.c_name }}</h1>
       <img class="bird-image" v-bind:src="bird.image_url" v-bind:alt="bird.c_name" style="max-width: 250px" />
       <p class="info-border">Bird Id: {{ bird.id }} | Scientific Name: {{ bird.s_name }}</p>
@@ -62,7 +61,6 @@ export default {
   },
   methods: {
     getPlaces() {
-      // make axios
       this.places = [{ lat: this.currentBird.long, lng: this.currentBird.lat, description: "GO HERE!" }];
       this.setMap();
     },
@@ -74,25 +72,16 @@ export default {
         container: "map", // container ID
         style: "mapbox://styles/mapbox/satellite-streets-v11", // style URL
         center: [this.currentBird.long, this.currentBird.lat], // starting position [lng, lat]
-        // center: [this.currentBird.long, this.currentBird.lat],
         zoom: 19, // starting zoom
       });
       this.places.forEach(() => {
-        // this.currentBird = bird;
-        // create the popup
-        // const popup = new mapboxgl.Popup({ offset: 25 }).setText(place.description);
-        const marker = new mapboxgl.Marker(bird)
-          .setLngLat([this.currentBird.long, this.currentBird.lat])
-          // .setPopup(popup)
-          .addTo(map);
+        const marker = new mapboxgl.Marker(bird).setLngLat([this.currentBird.long, this.currentBird.lat]).addTo(map);
         console.log(map, marker);
       });
     },
     destroyComment: function (comment) {
       axios.delete("/comments/" + comment.id).then((response) => {
         console.log("comments destroy", response);
-        // var index = this.comments.indexOf(comment);
-        // this.products.splice(index, 1);
       });
     },
   },
