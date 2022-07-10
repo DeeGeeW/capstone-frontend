@@ -223,7 +223,7 @@ nav a.router-link-exact-active {
   background-color: goldenrod;
 }
 .comment-bg {
-  background: url("https://cache.desktopnexus.com/cropped-wallpapers/2370/2370548-1680x1050-[DesktopNexus.com].jpg?st=keY2wjKSo3-SovkTymKH7Q&e=1654621479")
+  background: url("https://coolwallpapers.me/picsup/6160994-wings-pasare-angel-manga-man-card-captor-sakura-bird-ana-bi-anim-e-dove-white-blue.jpg")
     no-repeat center center fixed;
   min-height: 100%;
   min-width: 100%;
