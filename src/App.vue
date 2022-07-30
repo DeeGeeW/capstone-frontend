@@ -223,8 +223,8 @@ nav a.router-link-exact-active {
   background-color: goldenrod;
 }
 .comment-bg {
-  background: url("https://coolwallpapers.me/picsup/6160994-wings-pasare-angel-manga-man-card-captor-sakura-bird-ana-bi-anim-e-dove-white-blue.jpg")
-    no-repeat center center fixed;
+  background: url("https://cutewallpaper.org/25/anime-girl-holding-a-bird-wallpaper/132989544.jpg") no-repeat center
+    center fixed;
   min-height: 100%;
   min-width: 100%;
   color: goldenrod;

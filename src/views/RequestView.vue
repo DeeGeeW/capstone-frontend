@@ -52,7 +52,7 @@ export default {
 <template>
   <body class="request-bg">
     <div class="add-request">
-      <form v-on:submit.prevent="submit()">
+      <form v-on:submit.prevent="submit">
         <h1>Request Bird</h1>
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
