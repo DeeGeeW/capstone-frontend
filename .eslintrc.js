@@ -3,7 +3,7 @@ module.exports = {
   env: {
     node: true,
   },
-  extends: ["plugin:vue/vue3-essential", "eslint:recommended", "plugin:prettier/recommended"], // may need to delete "plugin:prettier/recommended" for netlify
+  extends: ["plugin:vue/vue3-essential", "eslint:recommended"], // may need to delete "plugin:prettier/recommended" for netlify
   parserOptions: {
     parser: "@babel/eslint-parser",
   },
