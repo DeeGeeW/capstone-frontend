@@ -20,8 +20,10 @@ export default {
         this.locations = response.data;
       });
     },
-    filterLocations() {
+    findLocations() {
       return this.locations.filter((location) => {
+        console.log(location);
+        // return this.locations.filter((location for localhost
         var lowercaseTitle = location.state.toLowerCase();
         var lowercaseSearchText = this.searchText.toLowerCase();
         return lowercaseTitle.includes(lowercaseSearchText);
@@ -54,7 +56,7 @@ export default {
       <div
         class="col"
         v-bind:class="{ selected: location === currentLocation }"
-        v-for="location in filterLocations()"
+        v-for="location in findLocations()"
         v-bind:key="location.id"
         v-on:mouseover="currentLocation = location"
       >
