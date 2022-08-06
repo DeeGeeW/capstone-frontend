@@ -21,8 +21,8 @@ export default {
       });
     },
     findLocations() {
-      return this.locations.filter((location) => {
-        console.log(location);
+      return this.locations.forEach((location) => {
+        console.log(location.location_comments);
         // return this.locations.filter((location for localhost
         var lowercaseTitle = location.state.toLowerCase();
         var lowercaseSearchText = this.searchText.toLowerCase();
