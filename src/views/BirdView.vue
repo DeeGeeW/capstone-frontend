@@ -92,7 +92,7 @@ export default {
 div .comment-box {
   border-style: inset;
   color: Black;
-  background-image: url("https://ca-times.brightspotcdn.com/dims4/default/ed38845/2147483647/strip/true/crop/5000x3333+0+0/resize/1240x827!/format/webp/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F90%2F72%2F04a53e28421cbd1e09c4506610e7%2Fla-tr-birdwatching-web-final.jpg");
+  background-image: url("https://w0.peakpx.com/wallpaper/653/506/HD-wallpaper-anime-bird-anime-bird-cartoon-nature.jpg");
   margin: 8px;
 }
 .comment-box h3 {
