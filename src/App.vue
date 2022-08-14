@@ -206,7 +206,7 @@ nav a.router-link-exact-active {
   min-width: 100%;
   color: goldenrod;
   padding-bottom: 800px;
-  cursor: url("images/12294-24x24x8 (2).png"), pointer, auto;
+  cursor: url("images/12294-24x24x8 (2).png"), auto;
 }
 .home-bg h1 {
   border-style: inset;
